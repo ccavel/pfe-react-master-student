@@ -1,0 +1,16 @@
+.header {
+    background-color: #ffffff1d;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.header .navigation {
+    display: flex;
+}
+
+.header .navigation div + div {
+    margin-left: 15px;
+}

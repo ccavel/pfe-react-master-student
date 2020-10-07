@@ -1,0 +1,4 @@
+.page-wrapper {
+    height: calc(100% - var(--header-height));
+    overflow: auto;
+}

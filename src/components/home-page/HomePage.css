@@ -1,0 +1,10 @@
+.home-page {
+    display: flex;
+    justify-content: center;
+}
+
+.home-page .logo-wrapper {
+    margin-top: 100px;
+    padding: 40px 80px;
+    background-color: white;
+}

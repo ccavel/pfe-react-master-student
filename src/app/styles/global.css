@@ -1,0 +1,29 @@
+/** Better box model */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+**::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/** Global */
+html {
+    height: 100%;;
+}
+
+
+body {
+    --header-height: 60px;
+    height: 100%;
+    margin: 0;
+    background-color: #121212;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#root {
+    height: 100%;
+}

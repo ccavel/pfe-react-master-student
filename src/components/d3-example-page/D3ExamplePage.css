@@ -1,0 +1,13 @@
+.d3-example-page {
+    padding-top: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.d3-example-page svg {
+    fill: #2cb67d;
+    stroke: #7f5af0;
+    stroke-width: 5px;
+}

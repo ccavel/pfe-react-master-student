@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "baseUrl": "./src",
+        "paths": {
+            "api/*": ["./api/*"],
+            "app/*": ["./app/*"],
+            "assets/*": ["./assets/*"],
+            "components/*": ["./components/*"],
+            "hooks/*": ["./hooks/*"],
+            "modules/*": ["./modules/*"],
+            "redux/*": ["./redux/*"],
+            "styles/*": ["./styles/*"],
+            "translation/*": ["./translation/*"],
+            "utils/*": ["./utils/*"]
+        },
+        "experimentalDecorators": true
+    },
+    "include": ["src"],
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ]
+}
