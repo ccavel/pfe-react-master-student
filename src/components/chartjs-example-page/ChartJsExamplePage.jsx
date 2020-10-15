@@ -10,15 +10,24 @@ const ChartJsExamplePage = () => {
         const myRadarChart = new Chart(canvasRef.current, {
             type: 'radar',
             data: {
-                labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+                labels: ['Logement', 'Alimentaire', 'Études', 'Loisirs', 'Transports', 'Abonnements', 'Autres'],
                 datasets: [{
-                    data: [20, 10, 4, 2],
+                    label: 'Septembre',
+                    backgroundColor: 'rgba(255,0,0,0.6)',
+                    data: [523.05, 383.07, 692, 28.43, 26.02, 35.96, 71],
+                }, {
+                    label: 'Octobre',
+                    backgroundColor: 'rgba(0,0,255,0.6)',
+                    data: [523.05, 234.71, 0, 20.2, 32, 35.96, 0],
                 }],
             },
             options: {
                 scale: {
                     angleLines: {
                         display: false,
+                    },
+                    gridLines: {
+                        color: 'white',
                     },
                     ticks: {
                         suggestedMin: 50,
