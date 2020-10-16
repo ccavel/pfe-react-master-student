@@ -1,31 +1,48 @@
 import React, { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
+import Chart from 'chart.js';
 
 import './D3ExamplePage.css';
 
-const D3ExamplePage = () => {
-    const containerRef = useRef();
+const ChartJsExamplePage = () => {
+    const canvasRef = useRef();
 
-    useEffect(() => {
-        const svgElement = d3.select(containerRef.current);
-        svgElement.append('circle')
-            .attr('cx', 150)
-            .attr('cy', 70)
-            .attr('r', 50);
+    useEffect(() => {      
+        // For a bubble chart
+        const myBubbleChart = new Chart(canvasRef.current, {
+            type: 'bubble',
+            data: {
+                labels: ['Domain1', 'Domain2', 'Domain3', 'Domain4'],
+                datasets: [{
+                    label: 'label1',
+                    backgroundColor: 'rgba(255,0,0,0.6)',
+                    data: [{
+                        x: 1, 
+                        y: 1,
+                        r: 4,
+                    },
+                    {
+                        x: 1, 
+                        y: 1,
+                        r: 2,
+                    }]
+                }],
+            },
+            options: Chart.defaults.bubble,
+        });
     }, []);
 
     return (
-        <div className="d3-example-page">
+        <div className="chartjs-example-page">
             <a
-                href="https://www.d3-graph-gallery.com/spider"
+                href="https://www.chartjs.org/docs/latest/charts/bubble.html"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-               Radar graph with d3
+                Sismographe graph with Chart.js
             </a>
-            <svg ref={containerRef} />
+            <canvas ref={canvasRef} />
         </div>
     );
 };
 
-export default D3ExamplePage;
+export default ChartJsExamplePage;

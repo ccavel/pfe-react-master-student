@@ -53,3 +53,4 @@ const ChartJsExamplePage = () => {
 };
 
 export default ChartJsExamplePage;
+
