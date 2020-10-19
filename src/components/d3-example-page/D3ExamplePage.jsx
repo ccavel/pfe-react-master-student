@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js';
 
 import './D3ExamplePage.css';
-import { string } from 'prop-types';
+//import { string } from 'prop-types';
 
 var cue1 = {
     action : [{
@@ -98,16 +98,15 @@ var cue3 = {
     weighting: 5,
     emergenceOriginId:"string"
 }
-var tabCues = [cue1, cue2, cue3]; //tableau de cues qui devrait être directement importé
-
 function setYValue() {
+    console.log("test1 ");
     var tabSubdomains = ["subdomain1", "subdomain2", "subdomain3"];
     var tabY = [];
-    for (let  i =0; i<this.tabCues.length; i++)
+    for (let  i =0; i<tabCues.length; i++)
     {
         for (let  j =0; j<tabSubdomains.length; j++)
         {
-            if (this.tabCues[i].subdomain == tabSubdomains[j])
+            if (tabCues[i].subdomain === tabSubdomains[j])
             {
                 tabY.push(j);
             }
@@ -117,13 +116,17 @@ function setYValue() {
 }
 
 function setXYRValue() {
+    console.log("test2 ");
     var tabY = setYValue();
     var tabCueXYR= [];
     var compteur = 0;
     var x, y, r;
-    for (var oneCue in this.tabCues)
+    for (var oneCue in tabCues)
     {
+        console.log("substring : " + oneCue.startDate.substring(8,9));
+        console.log ("x =" + parseInt(oneCue.startDate.substring(8,9)));
         x=parseInt(oneCue.startDate.substring(8,9));
+
         r=oneCue.weighting;
         y=tabY[compteur];
         tabCueXYR.push({x, y, r});
@@ -136,9 +139,9 @@ function setXYRValue() {
 
 const ChartJsExamplePage = () => {
     const canvasRef = useRef();
-    const tabCueXYR = setXYRValue();
 
-    useEffect(() => {      
+    useEffect(() => {
+        const tabCueXYR = setXYRValue();      
         // For a bubble chart
         const myBubbleChart = new Chart(canvasRef.current, {
             type: 'bubble',
