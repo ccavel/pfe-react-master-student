@@ -98,6 +98,9 @@ var cue3 = {
     weighting: 5,
     emergenceOriginId:"string"
 }
+
+var tabCues = [cue1, cue2, cue3];
+
 function setYValue() {
     console.log("test1 ");
     var tabSubdomains = ["subdomain1", "subdomain2", "subdomain3"];
@@ -116,18 +119,18 @@ function setYValue() {
 }
 
 function setXYRValue() {
-    console.log("test2 ");
+    console.log("test XYRfunction " + tabCues[0].action[0].startDate);
     var tabY = setYValue();
     var tabCueXYR= [];
     var compteur = 0;
     var x, y, r;
-    for (var oneCue in tabCues)
+    for (let  i =0; i<tabCues.length; i++)
     {
-        console.log("substring : " + oneCue.startDate.substring(8,9));
-        console.log ("x =" + parseInt(oneCue.startDate.substring(8,9)));
-        x=parseInt(oneCue.startDate.substring(8,9));
+        console.log("substring : " + tabCues[i].action[0].startDate.substring(8,10));
+        console.log ("x =" + parseInt(tabCues[i].action[0].startDate.substring(8,10)));
+        x=parseInt(tabCues[i].action[0].startDate.substring(8,10));
 
-        r=oneCue.weighting;
+        r=tabCues[i].weighting;
         y=tabY[compteur];
         tabCueXYR.push({x, y, r});
         compteur++;
