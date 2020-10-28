@@ -1,4 +1,4 @@
-/*
+
 .d3-example-page {
     padding-top: 20px;
     color: white;
@@ -12,4 +12,8 @@
     stroke: #7f5af0;
     stroke-width: 5px;
 }
-*/
+
+.margin {
+    margin: 150px;
+    margin-top: 10px;
+}
