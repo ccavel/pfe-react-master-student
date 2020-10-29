@@ -7,7 +7,7 @@ import LinkButton from 'components/header/link-button/LinkButton';
 
 const D3ExampleButton = ({ currentPage }) => (
     <LinkButton
-        label="D3 Example"
+        label="Sismographe"
         to={D3_EXAMPLE_ROUTE}
         isSelected={currentPage === D3_EXAMPLE_ROUTE}
     >
