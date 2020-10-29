@@ -6,7 +6,6 @@
     flex-direction: column;
     align-self: stretch;
     align-items: stretch;
-    flex:1
 }
 
 .d3-example-page svg {
@@ -25,7 +24,6 @@
 .dropper {
     margin: 30px 10px 10px 30px;
     display: flex;
-    flex:0;
     flex-direction: column;
     background-color: #555;
     border: 1px solid #111;

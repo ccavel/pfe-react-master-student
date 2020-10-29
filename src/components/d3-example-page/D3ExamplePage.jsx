@@ -203,76 +203,73 @@ function setXYRValue() {
 const ChartJsExamplePage = () => {
     const canvasRef = useRef();
 
-
     useEffect(() => {
         const tabCueXYR = setXYRValue();
         const nameSubdomains = selectAllSubdomain();
         const nbSubdomain = nameSubdomains.length;
 
         //GESTION DU DRAG AND DROP
-    (function() {
-        console.log("entrée dans la fonction");
-        var dndHandler = {
-            draggedElement: null,
+        (function() {
+            var dndHandler = {
+                draggedElement: null,
 
-            applyDragEvents: function(element) {
-                element.draggable = true;
+                applyDragEvents: function(element) {
+                    element.draggable = true;
 
-                var dndHandler = this; // Nécessaire pour que l'événement « dragstart » ci-dessous accède facilement au namespace « dndHandler »
+                    var dndHandler = this; // Nécessaire pour que l'événement « dragstart » ci-dessous accède facilement au namespace « dndHandler »
 
-                element.addEventListener("dragstart", function(e) {
-                    dndHandler.draggedElement = e.target; // On sauvegarde l'élément en cours de déplacement
-                    console.log("drag and drop ==> dragstart Event");
-                    e.dataTransfer.setData("text/plain", ""); // Nécessaire pour Firefox
-                });
-            },
+                    element.addEventListener("dragstart", function(e) {
+                        dndHandler.draggedElement = e.target; // Sauvegarde l'élément en cours de déplacement
+                        e.dataTransfer.setData("text/plain", ""); // Nécessaire pour Firefox
+                    });
+                },
 
-            applyDropEvents: function(dropper) {
-                dropper.addEventListener("dragover", function(e) {
-                    e.preventDefault(); // On autorise le drop d'éléments
-                    this.className = "dropper drop_hover"; // style de la zone de drop quand un élément la survole
-                });
+                applyDropEvents: function(dropper) {
+                    dropper.addEventListener("dragover", function(e) {
+                        e.preventDefault(); // On autorise le drop d'éléments
+                        this.className = "dropper drop_hover"; // style de la zone de drop quand un élément la survole
+                    });
 
-                dropper.addEventListener("dragleave", function() {
-                    this.className = "dropper"; // style lorsque l'élément quitte la zone de drop
-                });
+                    dropper.addEventListener("dragleave", function() {
+                        this.className = "dropper"; // style lorsque l'élément quitte la zone de drop
+                    });
 
-                var dndHandler = this;
+                    var dndHandler = this;
 
-                dropper.addEventListener("drop", function(e) {
-                    var target = e.target,
-                        draggedElement = dndHandler.draggedElement, // Récupération de l'élément concerné
-                        clonedElement = draggedElement.cloneNode(true); // On créé immédiatement le clone de cet élément
+                    dropper.addEventListener("drop", function(e) {
+                        var target = e.target,
+                            draggedElement = dndHandler.draggedElement, // Récupération de l'élément concerné
+                            clonedElement = draggedElement.cloneNode(true); // On créé immédiatement le clone de cet élément
 
-                    while (target.className.indexOf("dropper") === -1) {
-                        // Cette boucle permet de remonter jusqu'à la zone de drop parente
-                        target = target.parentNode;
-                    }
+                        while (target.className.indexOf("dropper") === -1) {
+                            // Cette boucle permet de remonter jusqu'à la zone de drop parente
+                            target = target.parentNode;
+                        }
 
-                    target.className = "dropper"; // Application du style par défaut
+                        target.className = "dropper"; // Application du style par défaut
 
-                    clonedElement = target.appendChild(clonedElement); // Ajout de l'élément cloné à la zone de drop actuelle
-                    dndHandler.applyDragEvents(clonedElement); // Nouvelle application des événements qui ont été perdus lors du cloneNode()
+                        clonedElement = target.appendChild(clonedElement); // Ajout de l'élément cloné à la zone de drop actuelle
+                        dndHandler.applyDragEvents(clonedElement); // Nouvelle application des événements qui ont été perdus lors du cloneNode()
 
-                    draggedElement.parentNode.removeChild(draggedElement); // Suppression de l'élément d'origine
-                });
+                        draggedElement.parentNode.removeChild(draggedElement); // Suppression de l'élément d'origine
+                    });
+                }
+            };
+
+            var elements = document.querySelectorAll(".draggable"), // Récupération de tous les éléments "draggable" de la page
+                elementsLen = elements.length;
+
+            for (var i = 0; i < elementsLen; i++) {
+                dndHandler.applyDragEvents(elements[i]); // Application des paramètres nécessaires aux éléments déplaçables
             }
-        };
 
-        var elements = document.querySelectorAll(".draggable"), // Récupération de tous les éléments "draggable" de la page
-            elementsLen = elements.length;
+            var droppers = document.querySelectorAll(".dropper"), // Récupération de toutes les zones de drop
+                droppersLen = droppers.length;
 
-        for (var i = 0; i < elementsLen; i++) {
-            dndHandler.applyDragEvents(elements[i]); // Application des paramètres nécessaires aux éléments déplaçables
-        }
-
-        var droppers = document.querySelectorAll(".dropper"), // Récupération de toutes les zones de drop
-            droppersLen = droppers.length;
-
-        for (var j = 0; j < droppersLen; j++) {
-            dndHandler.applyDropEvents(droppers[j]); // Application des événements nécessaires aux zones de drop
-        }
-    })();
+            for (var j = 0; j < droppersLen; j++) {
+                dndHandler.applyDropEvents(droppers[j]); // Application des événements nécessaires aux zones de drop
+            }
+        })();
 
         // BUBBLE CHART
         const myBubbleChart = new Chart(canvasRef.current, {
