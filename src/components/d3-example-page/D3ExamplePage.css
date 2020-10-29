@@ -2,9 +2,11 @@
 .d3-example-page {
     padding-top: 20px;
     color: white;
-    display: flex;
+    display : flex;
     flex-direction: column;
-    align-items: center;
+    align-self: stretch;
+    align-items: stretch;
+    flex:1
 }
 
 .d3-example-page svg {
@@ -14,17 +16,19 @@
 }
 
 .margin {
-    margin: 150px;
+    margin: 20px;
     margin-top: 10px;
+    display: flex;
+    align-items: stretch
 }
 
 .dropper {
-    margin: 50px 10px 10px 50px;
-    width: 400px;
-    height: 250px;
+    margin: 30px 10px 10px 30px;
+    display: flex;
+    flex:0;
+    flex-direction: column;
     background-color: #555;
     border: 1px solid #111;
-    
     border-radius: 10px;
     transition: all 200ms linear;
 }
@@ -41,10 +45,9 @@
     height: 60px;
     color: #3D110F;
     background-color: #822520;
-    border: 4px solid #3D110F;
     text-align: center;
     font-size: 2em;
-    cursor: move;
+    /*cursor: move;*/
 
     transition: all 200ms linear;
     user-select: none;

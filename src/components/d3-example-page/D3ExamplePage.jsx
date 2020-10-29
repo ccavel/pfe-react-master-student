@@ -200,86 +200,81 @@ function setXYRValue() {
     return tabCueXYR;
 }
 
-(function() {
-
-    var dndHandler = {
-
-        draggedElement: null, // Propriété pointant vers l'élément en cours de déplacement
-
-        applyDragEvents: function(element) {
-
-            element.draggable = true;
-
-            var dndHandler = this; // Cette variable est nécessaire pour que l'événement « dragstart » ci-dessous accède facilement au namespace « dndHandler »
-
-            element.addEventListener('dragstart', function(e) {
-                dndHandler.draggedElement = e.target; // On sauvegarde l'élément en cours de déplacement
-                e.dataTransfer.setData('text/plain', ''); // Nécessaire pour Firefox
-            });
-
-        },
-
-        applyDropEvents: function(dropper) {
-
-            dropper.addEventListener('dragover', function(e) {
-                e.preventDefault(); // On autorise le drop d'éléments
-                this.className = 'dropper drop_hover'; // Et on applique le style adéquat à notre zone de drop quand un élément la survole
-            });
-
-            dropper.addEventListener('dragleave', function() {
-                this.className = 'dropper'; // On revient au style de base lorsque l'élément quitte la zone de drop
-            });
-
-            var dndHandler = this; // Cette variable est nécessaire pour que l'événement « drop » ci-dessous accède facilement au namespace « dndHandler »
-
-            dropper.addEventListener('drop', function(e) {
-
-                var target = e.target,
-                    draggedElement = dndHandler.draggedElement, // Récupération de l'élément concerné
-                    clonedElement = draggedElement.cloneNode(true); // On créé immédiatement le clone de cet élément
-
-                while (target.className.indexOf('dropper') == -1) { // Cette boucle permet de remonter jusqu'à la zone de drop parente
-                    target = target.parentNode;
-                }
-
-                target.className = 'dropper'; // Application du style par défaut
-
-                clonedElement = target.appendChild(clonedElement); // Ajout de l'élément cloné à la zone de drop actuelle
-                dndHandler.applyDragEvents(clonedElement); // Nouvelle application des événements qui ont été perdus lors du cloneNode()
-
-                draggedElement.parentNode.removeChild(draggedElement); // Suppression de l'élément d'origine
-
-            });
-
-        }
-
-    };
-
-    var elements = document.querySelectorAll('.draggable'),
-        elementsLen = elements.length;
-
-    for (var i = 0; i < elementsLen; i++) {
-        dndHandler.applyDragEvents(elements[i]); // Application des paramètres nécessaires aux éléments déplaçables
-    }
-
-    var droppers = document.querySelectorAll('.dropper'),
-        droppersLen = droppers.length;
-
-    for (var i = 0; i < droppersLen; i++) {
-        dndHandler.applyDropEvents(droppers[i]); // Application des événements nécessaires aux zones de drop
-    }
-
-})();
-
 const ChartJsExamplePage = () => {
     const canvasRef = useRef();
+
 
     useEffect(() => {
         const tabCueXYR = setXYRValue();
         const nameSubdomains = selectAllSubdomain();
         const nbSubdomain = nameSubdomains.length;
 
-        // For a bubble chart
+        //GESTION DU DRAG AND DROP
+    (function() {
+        console.log("entrée dans la fonction");
+        var dndHandler = {
+            draggedElement: null,
+
+            applyDragEvents: function(element) {
+                element.draggable = true;
+
+                var dndHandler = this; // Nécessaire pour que l'événement « dragstart » ci-dessous accède facilement au namespace « dndHandler »
+
+                element.addEventListener("dragstart", function(e) {
+                    dndHandler.draggedElement = e.target; // On sauvegarde l'élément en cours de déplacement
+                    console.log("drag and drop ==> dragstart Event");
+                    e.dataTransfer.setData("text/plain", ""); // Nécessaire pour Firefox
+                });
+            },
+
+            applyDropEvents: function(dropper) {
+                dropper.addEventListener("dragover", function(e) {
+                    e.preventDefault(); // On autorise le drop d'éléments
+                    this.className = "dropper drop_hover"; // style de la zone de drop quand un élément la survole
+                });
+
+                dropper.addEventListener("dragleave", function() {
+                    this.className = "dropper"; // style lorsque l'élément quitte la zone de drop
+                });
+
+                var dndHandler = this;
+
+                dropper.addEventListener("drop", function(e) {
+                    var target = e.target,
+                        draggedElement = dndHandler.draggedElement, // Récupération de l'élément concerné
+                        clonedElement = draggedElement.cloneNode(true); // On créé immédiatement le clone de cet élément
+
+                    while (target.className.indexOf("dropper") === -1) {
+                        // Cette boucle permet de remonter jusqu'à la zone de drop parente
+                        target = target.parentNode;
+                    }
+
+                    target.className = "dropper"; // Application du style par défaut
+
+                    clonedElement = target.appendChild(clonedElement); // Ajout de l'élément cloné à la zone de drop actuelle
+                    dndHandler.applyDragEvents(clonedElement); // Nouvelle application des événements qui ont été perdus lors du cloneNode()
+
+                    draggedElement.parentNode.removeChild(draggedElement); // Suppression de l'élément d'origine
+                });
+            }
+        };
+
+        var elements = document.querySelectorAll(".draggable"), // Récupération de tous les éléments "draggable" de la page
+            elementsLen = elements.length;
+
+        for (var i = 0; i < elementsLen; i++) {
+            dndHandler.applyDragEvents(elements[i]); // Application des paramètres nécessaires aux éléments déplaçables
+        }
+
+        var droppers = document.querySelectorAll(".dropper"), // Récupération de toutes les zones de drop
+            droppersLen = droppers.length;
+
+        for (var j = 0; j < droppersLen; j++) {
+            dndHandler.applyDropEvents(droppers[j]); // Application des événements nécessaires aux zones de drop
+        }
+    })();
+
+        // BUBBLE CHART
         const myBubbleChart = new Chart(canvasRef.current, {
             type: "bubble",
             data: {
@@ -294,6 +289,7 @@ const ChartJsExamplePage = () => {
             },
             options: {
                 events: ["click"],
+                responsive: true,
                 padding: 30,
                 legend: {
                     display: true,
@@ -324,14 +320,10 @@ const ChartJsExamplePage = () => {
 
     return (
         <div className="margin">
-            <div class="dropper">
-                <div class="draggable">#1</div>
-                <div class="draggable">#2</div>
-            </div>
-
-            <div class="dropper">
-                <div class="draggable">#3</div>
-                <div class="draggable">#4</div>
+            <div className="dropper">
+                <div className="draggable">#1</div>
+                <div className="draggable">#2</div>
+                <div className="draggable">#3</div>
             </div>
             <div className="chartjs-example-page">
                 <a>Sismographe (all CCIR included)</a>
