@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js';
 
@@ -189,6 +190,7 @@ const ChartJsExamplePage = () => {
     const canvasRef = useRef();
 
     useEffect(() => {
+        // eslint-disable-next-line no-unused-vars
         const myRadarChart = new Chart(canvasRef.current, {
             type: 'radar',
             data: {
@@ -222,13 +224,7 @@ const ChartJsExamplePage = () => {
 
     return (
         <div className="chartjs-example-page">
-            <a
-                href="https://www.chartjs.org/docs/latest/charts/radar.html"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Radar graph with Chart.js
-            </a>
+                Spider graph (radar graph with Chart.js)
             <canvas ref={canvasRef} />
             <label>
                 {' '}
