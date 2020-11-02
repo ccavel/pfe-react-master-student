@@ -7,7 +7,7 @@ import LinkButton from 'components/header/link-button/LinkButton';
 
 const ChartJSExampleButton = ({ currentPage }) => (
     <LinkButton
-        label="Chart.js Example"
+        label="Spider Graph"
         to={CHARTJS_EXAMPLE_ROUTE}
         isSelected={currentPage === CHARTJS_EXAMPLE_ROUTE}
     >
