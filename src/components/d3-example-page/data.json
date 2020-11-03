@@ -1,0 +1,152 @@
+{
+    "tabCues": [
+      {
+        "action": [
+          {
+            "id": "1",
+            "startDate": "2020-10-02T15:16:42.427Z"
+          }
+        ],
+        "description": "desc1",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "1"
+        ],
+        "name": "cue n°1",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-10-02T15:16:42.427Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Political",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 5,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "2",
+            "startDate": "2020-10-03T15:11:12.727Z"
+          }
+        ],
+        "description": "desc2",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "2"
+        ],
+        "name": "cue n°2",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-10-03T15:11:12.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Political",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 15,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "3",
+            "startDate": "2020-10-05T15:21:34.122Z"
+          }
+        ],
+        "description": "desc3",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "3"
+        ],
+        "name": "cue n°3",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-10-05T15:21:34.122Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Cyber",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 25,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "3",
+            "startDate": "2020-10-05T15:21:34.122Z"
+          }
+        ],
+        "description": "desc3",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "3"
+        ],
+        "name": "cue n°3",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-10-05T15:21:34.122Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Air",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 17,
+        "emergenceOriginId": "string"
+      }
+    ]
+  }
