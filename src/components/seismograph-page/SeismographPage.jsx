@@ -2,12 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js';
 
 import { setXYRValue, selectAllSubdomain } from './seismograph.helpers';
-import './D3ExamplePage.css';
 import data from './seismograph.data';
+import './SeismographPage.css';
 
 const { tabCues } = data;
 
-const ChartJsExamplePage = () => {
+const SeismographPage = () => {
     const canvasRef = useRef();
 
     useEffect(() => {
@@ -100,4 +100,4 @@ const ChartJsExamplePage = () => {
     );
 };
 
-export default ChartJsExamplePage;
+export default SeismographPage;

@@ -1,27 +1,22 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { ROUTES_COMPONENTS } from './router.config';
-import { HOME_ROUTE, CHARTJS_EXAMPLE_ROUTE, D3_EXAMPLE_ROUTE } from './routes.const';
+import { ROUTES } from './router.config';
+import RouteWrapper from './route-wrapper/RouteWrapper';
 
 const Router = () => (
     <BrowserRouter>
         <Switch>
-            <Route
-                exact
-                path="/"
-                component={ROUTES_COMPONENTS[HOME_ROUTE]}
-            />
-            <Route
-                exact
-                path={D3_EXAMPLE_ROUTE}
-                component={ROUTES_COMPONENTS[D3_EXAMPLE_ROUTE]}
-            />
-            <Route
-                exact
-                path={CHARTJS_EXAMPLE_ROUTE}
-                component={ROUTES_COMPONENTS[CHARTJS_EXAMPLE_ROUTE]}
-            />
+            {
+                Object.values(ROUTES).map((route) => (
+                    <Route
+                        key={route}
+                        path={route}
+                        exact
+                        render={() => <RouteWrapper currentPage={route} />}
+                    />
+                ))
+            }
         </Switch>
     </BrowserRouter>
 );

@@ -2,14 +2,14 @@ import React from 'react';
 import { string } from 'prop-types';
 import Number2CircleOutlineIcon from 'mdi-react/Number2CircleOutlineIcon';
 
-import { D3_EXAMPLE_ROUTE } from 'app/router/routes.const';
+import { ROUTES } from 'app/router/router.config';
 import LinkButton from 'components/header/link-button/LinkButton';
 
 const D3ExampleButton = ({ currentPage }) => (
     <LinkButton
         label="Sismographe"
-        to={D3_EXAMPLE_ROUTE}
-        isSelected={currentPage === D3_EXAMPLE_ROUTE}
+        to={ROUTES.SEISMOGRAPH}
+        isSelected={currentPage === ROUTES.SEISMOGRAPH}
     >
         <Number2CircleOutlineIcon />
     </LinkButton>

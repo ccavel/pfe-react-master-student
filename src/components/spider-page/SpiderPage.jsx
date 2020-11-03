@@ -4,8 +4,8 @@ import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js';
 
 import { getSubdomain } from './spider.helpers';
-import './ChartJsExamplePage.css';
 import data from './spider.data';
+import './SpiderPage.css';
 
 const dateref1 = new Date(2020, 0, 1, 17, 23, 42);
 const dateref2 = new Date(2020, 1, 23, 17, 23, 42);
@@ -16,7 +16,7 @@ const tabDates = [dateref1, dateref2, dateref3, dateref4];
 const { tabCues } = data;
 const tabDomains = getSubdomain(tabCues, tabDates);
 
-const ChartJsExamplePage = () => {
+const SpiderPage = () => {
     const canvasRef = useRef();
 
     useEffect(() => {
@@ -52,7 +52,7 @@ const ChartJsExamplePage = () => {
     }, []);
 
     return (
-        <div className="chartjs-example-page">
+        <div className="spider-page">
                 Spider graph (radar graph with Chart.js)
             <canvas ref={canvasRef} />
             <label>
@@ -82,4 +82,4 @@ const ChartJsExamplePage = () => {
     );
 };
 
-export default ChartJsExamplePage;
+export default SpiderPage;

@@ -1,10 +1,15 @@
-import { HOME_ROUTE, D3_EXAMPLE_ROUTE, CHARTJS_EXAMPLE_ROUTE } from 'app/router/routes.const';
-import HomeRoute from 'app/router/routes/home-route/HomeRoute';
-import D3ExampleRoute from 'app/router/routes/d3-example-route/D3ExampleRoute';
-import ChartJsExampleRoute from 'app/router/routes/chartjs-example-route/ChartJsExampleRoute';
+import HomePage from '../../components/home-page/HomePage';
+import SpiderPage from '../../components/spider-page/SpiderPage';
+import SeismographPage from '../../components/seismograph-page/SeismographPage';
+
+export const ROUTES = {
+    HOME: '/',
+    SPIDER: '/spider',
+    SEISMOGRAPH: '/seismograph',
+};
 
 export const ROUTES_COMPONENTS = {
-    [HOME_ROUTE]: HomeRoute,
-    [D3_EXAMPLE_ROUTE]: D3ExampleRoute,
-    [CHARTJS_EXAMPLE_ROUTE]: ChartJsExampleRoute,
+    [ROUTES.HOME]: HomePage,
+    [ROUTES.SPIDER]: SpiderPage,
+    [ROUTES.SEISMOGRAPH]: SeismographPage,
 };

@@ -2,14 +2,14 @@ import React from 'react';
 import { string } from 'prop-types';
 import HomeIcon from 'mdi-react/HomeIcon';
 
-import { HOME_ROUTE } from 'app/router/routes.const';
+import { ROUTES } from 'app/router/router.config';
 import LinkButton from 'components/header/link-button/LinkButton';
 
 const HomeButton = ({ currentPage }) => (
     <LinkButton
         label="Home"
-        to={HOME_ROUTE}
-        isSelected={currentPage === HOME_ROUTE}
+        to={ROUTES.HOME}
+        isSelected={currentPage === ROUTES.HOME}
     >
         <HomeIcon />
     </LinkButton>
