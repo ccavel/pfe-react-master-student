@@ -21,11 +21,11 @@ function handleDragOver(e) {
     return false;
 }
 
-function handleDragEnter(e) {
+function handleDragEnter() {
     // this / e.target is the current hover target.
 }
 
-function handleDragLeave(e) {
+function handleDragLeave() {
     this.classList.remove('over'); // this / e.target is previous target element.
 }
 
