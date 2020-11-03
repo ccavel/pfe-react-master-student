@@ -132,6 +132,7 @@
         "operator-linebreak": ["error", "after"],
         "linebreak-style": "off",
         "no-plusplus": "off",
+        "radix": "off",
 
         // ES6
         // es6 possible errors / best practices

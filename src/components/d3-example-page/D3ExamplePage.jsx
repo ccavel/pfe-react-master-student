@@ -1,16 +1,15 @@
-import React, { useEffect, useRef } from "react";
-import Chart from "chart.js";
+import React, { useEffect, useRef } from 'react';
+import Chart from 'chart.js';
 
-import "./D3ExamplePage.css";
+import './D3ExamplePage.css';
 import data from './data';
-//import { string } from 'prop-types';
 
 const { tabCues } = data;
 
 function selectAllSubdomain() {
-    //fonction qui renvoie un tableau avec les subdomains utilisé (sans doublons)
-    var tabSubdomains = [];
-    var double = false;
+    // fonction qui renvoie un tableau avec les subdomains utilisé (sans doublons)
+    const tabSubdomains = [];
+    let double = false;
     for (let i = 0; i < tabCues.length; i++) {
         for (let j = 0; j < tabSubdomains.length; j++) {
             if (tabCues[i].subdomain === tabSubdomains[j]) {
@@ -25,11 +24,11 @@ function selectAllSubdomain() {
     return tabSubdomains;
 }
 
-//fonction qui trie les cue en fonction de leur subdomain en leur attribuant une valeur Y
-//elle renvoie un tableau contenant les coordonnées Y des cues à la suite
+// fonction qui trie les cue en fonction de leur subdomain en leur attribuant une valeur Y
+// elle renvoie un tableau contenant les coordonnées Y des cues à la suite
 function setYValue() {
-    var tabSubdomains = selectAllSubdomain();
-    var tabY = [];
+    const tabSubdomains = selectAllSubdomain();
+    const tabY = [];
     for (let i = 0; i < tabCues.length; i++) {
         for (let j = 0; j < tabSubdomains.length; j++) {
             if (tabCues[i].subdomain === tabSubdomains[j]) {
@@ -41,11 +40,12 @@ function setYValue() {
 }
 
 function setXYRValue() {
-    //fonction qui renvoie un tableau contenant les coordonnées X,Y et R pour chaque cue
-    var tabY = setYValue();
-    var tabCueXYR = [];
-    var compteur = 0;
-    var x, y, r;
+    // fonction qui renvoie un tableau contenant les coordonnées X,Y et R pour chaque cue
+    const tabY = setYValue();
+    const tabCueXYR = [];
+    let compteur = 0;
+    let x; let y; let
+        r;
     for (let i = 0; i < tabCues.length; i++) {
         x = parseInt(
             tabCues[i].action[0].startDate.substring(0, 4) +
@@ -68,38 +68,39 @@ const ChartJsExamplePage = () => {
         const nameSubdomains = selectAllSubdomain();
         const nbSubdomain = nameSubdomains.length;
 
-        //création de la légende de gauche
+        // création de la légende de gauche
         for (let j = 0; j < nameSubdomains.length; j++) {
-            document.getElementById("columns").innerHTML +=
-                '<li class="column" draggable="true"><header>' +
-                nameSubdomains[j] +
-                "</header></li>";
+            document.getElementById('columns').innerHTML +=
+                `<li class="column" draggable="true"><header>${
+                    nameSubdomains[j]
+                }</header></li>`;
         }
 
         // BUBBLE CHART
-        const myBubbleChart = new Chart(canvasRef.current, {
-            type: "bubble",
+        // eslint-disable-next-line no-new
+        new Chart(canvasRef.current, {
+            type: 'bubble',
             data: {
-                labels: ["Sismograph"],
+                labels: ['Sismograph'],
                 datasets: [
                     {
-                        label: "Cue",
-                        backgroundColor: "rgba(255,0,0,0.6)",
-                        data: tabCueXYR
-                    }
-                ]
+                        label: 'Cue',
+                        backgroundColor: 'rgba(255,0,0,0.6)',
+                        data: tabCueXYR,
+                    },
+                ],
             },
             options: {
-                events: ["click"],
+                events: ['click'],
                 responsive: true,
                 padding: 30,
                 legend: {
                     display: true,
-                    position: "right"
+                    position: 'right',
                 },
                 title: {
                     display: true,
-                    text: "Sismograph"
+                    text: 'Sismograph',
                 },
                 scales: {
                     yAxes: [
@@ -111,44 +112,39 @@ const ChartJsExamplePage = () => {
                                 // callback: function(value, index, values) {
                                 //     return nameSubdomains[value];
                                 // },
-                                callback: function(value, index, values) {
-                                    //ne pas afficher la valeur de l'échelle verticale
-                                    return "";
-                                },
-                                lineHeight: 20
-                            }
-                        }
+                                callback: () => '',
+                                lineHeight: 20,
+                            },
+                        },
                     ],
                     xAxes: [
                         {
                             ticks: {
                                 stepSize: 1,
-                                callback: function(value, index, values) {
-                                    var year = value.toString().substring(0, 4);
-                                    var month = value
+                                callback: (value) => {
+                                    const year = value.toString().substring(0, 4);
+                                    const month = value
                                         .toString()
                                         .substring(4, 6);
-                                    var day = value.toString().substring(6, 8);
-                                    var date = day + "/" + month + "/" + year;
+                                    const day = value.toString().substring(6, 8);
+                                    const date = `${day}/${month}/${year}`;
                                     return date;
-                                }
-                            }
-                        }
-                    ]
-                }
-            }
+                                },
+                            },
+                        },
+                    ],
+                },
+            },
         });
     }, []);
 
     return (
         <div className="title">
             <h2>Sismographe (all CCIR included)</h2>
-
             <div className="container">
                 <div className="margin">
-                    <ul id="columns"></ul>
+                    <ul id="columns" />
                 </div>
-
                 <div className="sismographContainer">
                     <canvas ref={canvasRef} />
                 </div>
