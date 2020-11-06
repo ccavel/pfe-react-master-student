@@ -1,11 +1,11 @@
-.title{
+.title {
     text-align: center;
-    color: antiquewhite
+    color: antiquewhite;
 }
 .container {
     align-items: stretch;
     flex-direction: row;
-    display: flex ;
+    display: flex;
 }
 .margin {
     margin: 20px;
@@ -13,12 +13,8 @@
     flex-direction: column;
     align-items: flex-end;
 }
-  
-  #columns {
-    list-style-type: none;
-  }
-  
-ul, li {
+.columns,
+.column {
     width: 162px;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -26,40 +22,36 @@ ul, li {
     cursor: move;
     flex: 999 999 auto;
     align-items: flex-end;
-  }
-
-li header {
+    list-style-type: none;
+}
+.column header {
     width: 150px;
-    color: black;
+    color: #ddd;
     background-color: rgba(34, 34, 34, 0.589);
     padding: 5px;
     border-bottom: 1px solid #ddd;
     border-radius: 10px;
     border: 2px solid #666666;
     flex: 999 999 auto;
-/*ici modifier pour que la case prenne la place maximale*/
-  }
-  
-  .column.dragElem {
+    /*ici modifier pour que la case prenne la place maximale*/
+}
+.column.dragElem {
     opacity: 0.4;
-  }
-   .column.over {
+}
+.column.over {
     border-top: 2px solid rgb(255, 187, 0);
-  } 
-  
-  [draggable] {
+}
+
+[draggable] {
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
     -khtml-user-drag: element;
     -webkit-user-drag: element;
-  }
-
+}
 .sismographContainer {
     padding-top: 20px;
     color: white;
     flex: 999 999 auto;
-
 }
-

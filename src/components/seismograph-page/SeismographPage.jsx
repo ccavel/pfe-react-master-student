@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js';
 
+// import { addDnDHandlers } from 'C:/Users/CAROLINE/Documents/GitHub/pfe-react-master/src/utils/drag-n-drop/dragNdrop';
+import { addDnDHandlers } from 'utils/drag-n-drop/dragNdrop';
+
 import { setXYRValue, selectAllSubdomain } from './seismograph.helpers';
 import data from './seismograph.data';
 import './SeismographPage.css';
@@ -17,10 +20,13 @@ const SeismographPage = () => {
 
         // création de la légende de gauche
         for (let j = 0; j < nameSubdomains.length; j++) {
-            document.getElementById('columns').innerHTML +=
-                `<li class="column" draggable="true"><header>${
-                    nameSubdomains[j]
-                }</header></li>`;
+            document.getElementById(
+                'columns'
+            ).innerHTML += `<li class="column" draggable="true"><header>${nameSubdomains[j]}</header></li>`;
+        }
+        const eltColumnTab = document.getElementsByClassName('column');
+        for (let k = 0; k < eltColumnTab.length; k++) {
+            addDnDHandlers(eltColumnTab[k]);
         }
 
         // BUBBLE CHART
@@ -69,11 +75,15 @@ const SeismographPage = () => {
                             ticks: {
                                 stepSize: 1,
                                 callback: (value) => {
-                                    const year = value.toString().substring(0, 4);
+                                    const year = value
+                                        .toString()
+                                        .substring(0, 4);
                                     const month = value
                                         .toString()
                                         .substring(4, 6);
-                                    const day = value.toString().substring(6, 8);
+                                    const day = value
+                                        .toString()
+                                        .substring(6, 8);
                                     const date = `${day}/${month}/${year}`;
                                     return date;
                                 },
@@ -99,5 +109,4 @@ const SeismographPage = () => {
         </div>
     );
 };
-
 export default SeismographPage;

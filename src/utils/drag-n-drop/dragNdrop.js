@@ -52,6 +52,7 @@ function handleDrop(e) {
 function handleDragEnd() {
     // this/e.target is the source node.
     this.classList.remove('over');
+    console.log(dragSrcEl);
 }
 
 export function addDnDHandlers(elem) {
@@ -62,6 +63,3 @@ export function addDnDHandlers(elem) {
     elem.addEventListener('drop', handleDrop, false);
     elem.addEventListener('dragend', handleDragEnd, false);
 }
-
-// const cols = document.querySelectorAll('#columns .column');
-// [].forEach.call(cols, addDnDHandlers);
