@@ -1,4 +1,4 @@
-.chartjs-example-page {
+.spider-page {
     padding-top: 20px;
     display: flex;
     flex-direction: column;
@@ -6,31 +6,39 @@
     color: white;
 }
 
-li {list-style-type: none;
-font-size: 16pt;
-}
-.mail {
-margin: auto;
-padding-top: 10px;
-padding-bottom: 10px;
-width: 400px;
-background : #D8F1F8;
-border: 1px soild silver;
-}
-.mail h2 {
-margin-left: 38px;
-}
-input {
-font-size: 20pt;
-}
-input:focus, textarea:focus{
-background-color: lightyellow;
-}
-input submit {
-font-size: 12pt;
-}
-.rq {
-color: #FF0000;
-font-size: 10pt;
+.spider-page input {
+    font-size: 20pt;
 }
 
+.spider-page label {
+    flex-direction: column;
+ }
+    
+
+.spider-page input[type=submit] {
+    font-size: 12pt;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.spider-page * {
+  box-sizing: border-box;
+}
+
+.spider-page .column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.spider-page .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .spider-page .column {
+    width: 100%;
+  }
+}
