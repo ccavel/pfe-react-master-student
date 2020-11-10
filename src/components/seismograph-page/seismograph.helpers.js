@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 export function selectAllSubdomain(tabCues = []) {
     // fonction qui renvoie un tableau avec les subdomains utilisé (sans doublons)
     const tabSubdomains = [];
@@ -54,38 +55,31 @@ export function setXYRValue(tabCues = []) {
 
 // eslint-disable-next-line complexity
 export function changeYvalue(nameDropElt, namePreviousDropElt, tabAllSubdomain, dataXYRTab) {
-    let oldNumDropElt; let newNumDropElt;
-    let oldY; let newY;
-    const nbSubdomain = tabAllSubdomain.lengt;
+    let oldNumDropElt; let newNumDropElt; // indice du subdomain dans la liste des subdomain avant et après déplacement
+    let oldY; let newY; // coordonnées Y des cues du subdomain avant et après son subdomain
+    const nbSubdomain = tabAllSubdomain.length;
 
-    // on ne gère pas le cas où l'élément est droppé au même endroit
-
-    // On récupère l'indice de la position de l'élement déplacé (avant et après déplacement) dans la liste des subdomains
+    // Récupération de l'indice de la position de l'élement déplacé (avant et après déplacement) dans la liste des subdomains
     for (let i = 0; i < nbSubdomain; i++) {
-        if (namePreviousDropElt === 'unknown') {
-            console.log('ERROR previous element not assign');
-        } else if (namePreviousDropElt === null) { // cas où l'élément n'a pas d'élément précédent, aka, c'est le 1er dans la lsite
+        if (namePreviousDropElt === 'unknown') { // cas où l'élément n'a pas d'élément précédent, aka, c'est le 1er dans la liste
             newNumDropElt = 0;
-            newY = nbSubdomain - 0.5; // nbTotal -1 car on commence à zéro, et (+0.5) car lespoint s'affiche au milieu des lignes
+            newY = nbSubdomain - 0.5;
         } else if (tabAllSubdomain[i] === (namePreviousDropElt)) {
             newNumDropElt = i + 1;
-            newY = nbSubdomain - i - 0.5;
+            newY = nbSubdomain - newNumDropElt - 0.5;
         }
         if (tabAllSubdomain[i] === (nameDropElt)) {
             oldNumDropElt = i;
-            oldY = nbSubdomain - 0.5;
+            oldY = nbSubdomain - oldNumDropElt - 0.5;
         }
     }
-    // ici insérer la màj du tableau tabAllSubdomain
 
-    // si le subdomain est décalé vers le bas
-    if (oldNumDropElt < newNumDropElt) {
+    // Remplacement des coordonnées des cues
+    if (oldNumDropElt < newNumDropElt) { // si le subdomain est décalé vers le bas
         for (let j = 0; j < dataXYRTab.length; j++) { // on parcourt toutes les cues
             if (dataXYRTab[j].y === (oldY)) { // si l'élément est celui qu'on a déplacé, on lui attribue une valeur spéciale en attendant la permutation
-                // eslint-disable-next-line no-param-reassign
                 dataXYRTab[j].y = null;
             } else if ((dataXYRTab[j].y >= newY) && (dataXYRTab[j].y < oldY)) {
-                // eslint-disable-next-line no-param-reassign
                 dataXYRTab[j].y += 1;
             }
         }
@@ -98,10 +92,8 @@ export function changeYvalue(nameDropElt, namePreviousDropElt, tabAllSubdomain, 
     } else { // si le subdomain est décalé vers le haut
         for (let j = 0; j < dataXYRTab.length; j++) { // on parcourt toutes les cues
             if (dataXYRTab[j].y === (oldY)) { // si l'élément est celui qu'on a déplacé, on lui attribue une valeur spéciale en attendant la permutation
-                // eslint-disable-next-line no-param-reassign
                 dataXYRTab[j].y = null;
             } else if ((dataXYRTab[j].y <= newY) && (dataXYRTab[j].y > oldY)) {
-                // eslint-disable-next-line no-param-reassign
                 dataXYRTab[j].y -= 1;
             }
         }
@@ -112,5 +104,12 @@ export function changeYvalue(nameDropElt, namePreviousDropElt, tabAllSubdomain, 
             }
         }
     }
-    return dataXYRTab;
+    console.log(tabAllSubdomain);
+
+    // Màj du tableau tabAllSubdomain
+    tabAllSubdomain.splice(oldNumDropElt, 1);
+    tabAllSubdomain.splice(newNumDropElt, 0, nameDropElt);
+    console.log(tabAllSubdomain);
+
+    return [dataXYRTab, tabAllSubdomain];
 }

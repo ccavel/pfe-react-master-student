@@ -2,16 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js';
 
 // import { addDnDHandlers } from 'C:/Users/CAROLINE/Documents/GitHub/pfe-react-master/src/utils/drag-n-drop/dragNdrop';
-import { addDnDHandlers, namePreviousDropElt, nameDropElt } from 'utils/drag-n-drop/dragNdrop';
+import { addDnDHandlers, tabCueXYR, nameSubdomains } from 'utils/drag-n-drop/dragNdrop';
 
-import { setXYRValue, selectAllSubdomain, changeYvalue } from './seismograph.helpers';
-import cueData from './seismograph.data';
 import './SeismographPage.css';
 
-const { tabCues } = cueData;
-const tabCueXYR = setXYRValue(tabCues);
-const nameSubdomains = selectAllSubdomain(tabCues);
-const nbSubdomain = nameSubdomains.length;
 const chartData = {
     labels: ['Sismograph'],
     datasets: [
@@ -19,7 +13,6 @@ const chartData = {
             label: 'Cue',
             backgroundColor: 'rgba(255,0,0,0.6)',
             data: tabCueXYR,
-            // data: changeYvalue(nameDropElt, namePreviousDropElt, nameSubdomains, tabCueXYR),
         },
     ],
 };
@@ -40,7 +33,7 @@ const chartOptions = {
             {
                 ticks: {
                     suggestedMin: 0,
-                    suggestedMax: nbSubdomain,
+                    suggestedMax: nameSubdomains.length,
                     stepSize: 1,
                     // callback: function(value, index, values) {
                     //     return nameSubdomains[value];
@@ -91,8 +84,8 @@ const SeismographPage = () => {
         for (let k = 0; k < eltColumnTab.length; k++) {
             addDnDHandlers(eltColumnTab[k]);
         }
-        // const myChart = new Chart(canvasRef.current, {
-        const myChart = new Chart(canvasRef.current, {
+        // eslint-disable-next-line no-new
+        new Chart(canvasRef.current, {
             type: 'bubble',
             data: chartData,
             options: chartOptions,
@@ -103,9 +96,6 @@ const SeismographPage = () => {
         //     chart.update();
         // }
         // console.log(`TEST ${document.getElementById('myChart')}`);
-        document.ondragend = function (e) {
-            console.log('ON DROOOOOP');
-        };
         // document.ondragend = function (e) {
         //     e.preventDefault();
         //     console.log('TEST' + myChart);

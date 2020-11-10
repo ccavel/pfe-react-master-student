@@ -1,8 +1,15 @@
+import cueData from 'components/seismograph-page/seismograph.data';
+import { setXYRValue, selectAllSubdomain, changeYvalue } from 'components/seismograph-page/seismograph.helpers';
+
 let dragSrcEl = null;
+let namePreviousDropElt = 'unknown';
+let nameDropElt = 'unknown';
+const { tabCues } = cueData;
+
 // eslint-disable-next-line import/no-mutable-exports
-export let namePreviousDropElt = 'unknown';
+export let tabCueXYR = setXYRValue(tabCues);
 // eslint-disable-next-line import/no-mutable-exports
-export let nameDropElt = 'unknown';
+export let nameSubdomains = selectAllSubdomain(tabCues);
 
 function handleDragStart(e) {
     // Target (this) element is the source node.
@@ -54,7 +61,9 @@ function handleDrop(e) {
             namePreviousDropElt = dropElem.previousSibling.outerHTML.split('<header>')[1].split('</header')[0];
         }
         addDnDHandlers(dropElem);
-        console.log(`DragEnd ${document.getElementById('myChart')}`);
+        // Ici modification du tableau de données du graph.
+        [tabCueXYR, nameSubdomains] = changeYvalue(nameDropElt, namePreviousDropElt, nameSubdomains, tabCueXYR);
+        console.log('ici rajouter un chart.update');
     }
     this.classList.remove('over');
     return false;
