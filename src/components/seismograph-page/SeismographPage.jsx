@@ -79,11 +79,12 @@ const SeismographPage = () => {
             addDnDHandlers(eltColumnTab[k]);
         }
         // eslint-disable-next-line no-new
-        new Chart(canvasRef.current, {
+        const myChart = new Chart(canvasRef.current, {
             type: 'bubble',
             data: chartData,
             options: chartOptions,
         });
+        myChart.update();
     }, []);
 
     return (
@@ -91,7 +92,10 @@ const SeismographPage = () => {
             <h2>Sismographe (all CCIR included)</h2>
             <div className="container">
                 <div className="margin">
-                    <ul id="columns" />
+                    <ul
+                        id="columns"
+                        className="columns"
+                    />
                 </div>
                 <div className="sismographContainer">
                     <canvas

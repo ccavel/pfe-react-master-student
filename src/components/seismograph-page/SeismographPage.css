@@ -11,30 +11,37 @@
     margin: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-self: stretch;
+    
 }
-.columns,
-.column {
+.columns {
     width: 162px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    text-align: center;
-    cursor: move;
-    flex: 999 999 auto;
-    align-items: flex-end;
     list-style-type: none;
+    cursor: move;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    margin-top: 30px
 }
+
+ .column {
+    height: 100%;
+    list-style-type: none;
+    margin: 10px;
+    text-justify: center;
+
+}
+
 .column header {
-    width: 150px;
+    height:100%; 
     color: #ddd;
     background-color: rgba(34, 34, 34, 0.589);
-    padding: 5px;
     border-bottom: 1px solid #ddd;
     border-radius: 10px;
     border: 2px solid #666666;
-    flex: 999 999 auto;
-    /*ici modifier pour que la case prenne la place maximale*/
-}
+    vertical-align: middle;
+} 
 .column.dragElem {
     opacity: 0.4;
 }
