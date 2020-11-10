@@ -35,9 +35,6 @@ const chartOptions = {
                     suggestedMin: 0,
                     suggestedMax: nameSubdomains.length,
                     stepSize: 1,
-                    // callback: function(value, index, values) {
-                    //     return nameSubdomains[value];
-                    // },
                     callback: () => '',
                     lineHeight: 20,
                 },
@@ -70,9 +67,6 @@ const SeismographPage = () => {
     const canvasRef = useRef();
 
     useEffect(() => {
-        // const nameSubdomains = selectAllSubdomain(tabCues);
-        // const nbSubdomain = nameSubdomains.length;
-
         // création de la légende de gauche
         for (let j = 0; j < nameSubdomains.length; j++) {
             document.getElementById(
@@ -90,18 +84,6 @@ const SeismographPage = () => {
             data: chartData,
             options: chartOptions,
         });
-        // myChart.dataset.data = changeYvalue(myChart.dataset.data, 2, 1);
-        // function randomize() {
-        //     chart.dataset.data = changeYvalue(nameDropElt, namePreviousDropElt, nameSubdomains, tabCueXYR)
-        //     chart.update();
-        // }
-        // console.log(`TEST ${document.getElementById('myChart')}`);
-        // document.ondragend = function (e) {
-        //     e.preventDefault();
-        //     console.log('TEST' + myChart);
-        //     myChart.dataset.data = changeYvalue(nameDropElt, namePreviousDropElt, nameSubdomains, tabCueXYR);
-        //     myChart.update();
-        // };
     }, []);
 
     return (

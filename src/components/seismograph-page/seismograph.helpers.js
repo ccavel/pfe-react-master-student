@@ -65,7 +65,7 @@ export function changeYvalue(nameDropElt, namePreviousDropElt, tabAllSubdomain, 
             newNumDropElt = 0;
             newY = nbSubdomain - 0.5;
         } else if (tabAllSubdomain[i] === (namePreviousDropElt)) {
-            newNumDropElt = i + 1;
+            newNumDropElt = i;
             newY = nbSubdomain - newNumDropElt - 0.5;
         }
         if (tabAllSubdomain[i] === (nameDropElt)) {
@@ -104,12 +104,10 @@ export function changeYvalue(nameDropElt, namePreviousDropElt, tabAllSubdomain, 
             }
         }
     }
-    console.log(tabAllSubdomain);
 
     // Màj du tableau tabAllSubdomain
     tabAllSubdomain.splice(oldNumDropElt, 1);
     tabAllSubdomain.splice(newNumDropElt, 0, nameDropElt);
-    console.log(tabAllSubdomain);
 
     return [dataXYRTab, tabAllSubdomain];
 }
