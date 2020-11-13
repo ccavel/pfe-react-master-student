@@ -1,38 +1,34 @@
-// returns tabDom =
-// [[domain 1, domain 2, domain 3, ...], [nb cues for domain 1 in 1st period, nb cues for domain 2 in 1st period, ...], [nb cues for dom 1 in 2nd period, ...]]
-export function getSubdomain(tabCues, tableauDates) {
-    const tabDom = [[], [], []];
-    for (let i = 0; i < tabCues.length; i++) {
-        const dom = tabCues[i].subdomain;
-        const dateDom = new Date(tabCues[i].action[0].startDate);
-        const posDom = tabDom[0].indexOf(dom);
+import { DateTime } from 'luxon';
 
-        const dateInFirstPeriod = (dateDom > tableauDates[0]) && (dateDom < tableauDates[1]);
-        const dateInSecondPeriod = (dateDom > tableauDates[2]) && (dateDom < tableauDates[3]);
-        if (dateInFirstPeriod || dateInSecondPeriod) {
-            if (posDom !== -1) {
-                if (dateInFirstPeriod) {
-                    tabDom[1][posDom] += 1;
-                }
-                if (dateInSecondPeriod) {
-                    tabDom[2][posDom] += 1;
-                }
-            } else {
-                tabDom[0].push(dom);
-                if (dateInFirstPeriod) {
-                    tabDom[1].push(1);
-                } else {
-                    tabDom[1].push(0);
-                }
-                if (dateInSecondPeriod) {
-                    tabDom[2].push(1);
-                } else {
-                    tabDom[2].push(0);
-                }
-            // console.log(tabDom);
-            }
+const DATE_FORMAT = 'yyyy-MM-dd';
+
+const uniqueFilter = (value, index, array) => array.indexOf(value) === index;
+
+export const getSubdomains = (tabCues) => tabCues.map((cue) => cue.subdomain).filter(uniqueFilter);
+
+// Compare dates using luxon library
+const withinRange = (occurenceDate, date1, date2) => {
+    const luxonOccurenceDate = DateTime.fromISO(occurenceDate);
+    const luxonDate1 = DateTime.fromFormat(date1, DATE_FORMAT);
+    const luxonDate2 = DateTime.fromFormat(date2, DATE_FORMAT);
+    return luxonDate1 <= luxonOccurenceDate && luxonOccurenceDate <= luxonDate2;
+};
+
+export const getNbCuesBySubDomainForDateRange = (startDate, endDate, subDomains, tabCues) => {
+    const nbCuesByDomain = [];
+    for (const subdomain of subDomains) {
+        if (startDate && endDate) {
+            // get cues for the domain
+            const cues = tabCues.filter((cue) => cue.subdomain === subdomain);
+            // for each cue, get the occurences within the specified date range
+            const nbOccurencesWithinDateRange = cues.reduce((acc, cue) => {
+                const occurencesWithinRange = cue.occurences.filter((occurence) => withinRange(occurence.computationTime, startDate, endDate));
+                return acc + occurencesWithinRange.length;
+            }, 0);
+            nbCuesByDomain.push(nbOccurencesWithinDateRange);
+        } else {
+            nbCuesByDomain.push(0);
         }
     }
-
-    return tabDom;
-}
+    return nbCuesByDomain;
+};

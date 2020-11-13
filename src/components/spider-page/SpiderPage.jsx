@@ -1,140 +1,135 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable max-lines-per-function */
-import React, { useEffect, useRef, useState } from 'react';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Chart from 'chart.js';
 
-import { getSubdomain } from './spider.helpers';
+import { getSubdomains, getNbCuesBySubDomainForDateRange } from './spider.helpers';
 import data from './spider.data';
 import './SpiderPage.css';
 
-const dateref1 = new Date(2020, 0, 1, 17, 23, 42);
-const dateref2 = new Date(2020, 0, 1, 17, 23, 42);
-const dateref3 = new Date(2020, 0, 1, 17, 23, 42);
-const dateref4 = new Date(2020, 0, 1, 17, 23, 42);
-const tabDates = [dateref1, dateref2, dateref3, dateref4];
-
 const { tabCues } = data;
 
+const LABEL_DATE_RANGE_1 = 'Date Range 1';
+const LABEL_DATE_RANGE_2 = 'Date Range 2';
+const COLOR_DATE_RANGE_1 = 'rgb(54, 162, 235)';
+const COLOR_DATE_RANGE_1_ALPHA = 'rgba(54, 162, 235, 0.3)';
+const COLOR_DATE_RANGE_2 = 'rgb(255, 99, 132)';
+const COLOR_DATE_RANGE_2_ALPHA = 'rgba(255, 99, 132, 0.3)';
+const MIN_SCALE_SIZE = 5;
+const GRAPH_FONT_SIZE = 16;
+
 const SpiderPage = () => {
-    // eslint-disable-next-line prefer-const
-    let [tabDomains, setDom] = useState({});
-    tabDomains = getSubdomain(tabCues, tabDates);
+    // STATE
+    const [date1, setDate1] = useState();
+    const [date2, setDate2] = useState();
+    const [date3, setDate3] = useState();
+    const [date4, setDate4] = useState();
+
+    // EVENT HANDLERS. (useCallback allows react to memorize the function, instead of redeclaring it on every render)
+    const handleDate1Change = useCallback((event) => {
+        setDate1(event.target.value);
+    }, []);
+    const handleDate2Change = useCallback((event) => {
+        setDate2(event.target.value);
+    }, []);
+    const handleDate3Change = useCallback((event) => {
+        setDate3(event.target.value);
+    }, []);
+    const handleDate4Change = useCallback((event) => {
+        setDate4(event.target.value);
+    }, []);
+
+    // REF
     const canvasRef = useRef();
-    const state = { date1: '', date2: '', date3: '', date4: '' };
 
-    const handleInputChange = (event) => {
-        event.preventDefault();
-        setDom({ tabDomains: getSubdomain(tabCues, tabDates) });
-    };
-
-    const mySubmitHandler = (event) => {
-        event.preventDefault();
-        const upDate = new Date(event.target.value);
-        tabDates[event.target.id] = upDate;
-    };
-
+    // Effect syncchronisation: Chart will be re-rendered in the canvas everytime one of the date changes
     useEffect(() => {
+        const subDomains = getSubdomains(tabCues);
+        const nbCuesBySubDomainForDateRange1 = getNbCuesBySubDomainForDateRange(date1, date2, subDomains, tabCues);
+        const nbCuesBySubDomainForDateRange2 = getNbCuesBySubDomainForDateRange(date3, date4, subDomains, tabCues);
+        const max = Math.max(...nbCuesBySubDomainForDateRange1, ...nbCuesBySubDomainForDateRange2);
         // eslint-disable-next-line no-new
         new Chart(canvasRef.current, {
             type: 'radar',
             data: {
-                labels: tabDomains[0],
-                datasets: [{ label: 'Période 1', backgroundColor: 'rgba(255,0,0,0.6)', data: tabDomains[1] },
-                    { label: 'Période 2',
-                        backgroundColor: 'rgba(0,0,255,0.6)',
-                        data: tabDomains[2] }],
+                labels: subDomains,
+                datasets: [
+                    {
+                        label: LABEL_DATE_RANGE_1,
+                        data: nbCuesBySubDomainForDateRange1,
+                        backgroundColor: COLOR_DATE_RANGE_1_ALPHA,
+                        borderColor: COLOR_DATE_RANGE_1,
+                        pointBackgroundColor: COLOR_DATE_RANGE_1,
+                    },
+                    {
+                        label: LABEL_DATE_RANGE_2,
+                        data: nbCuesBySubDomainForDateRange2,
+                        backgroundColor: COLOR_DATE_RANGE_2_ALPHA,
+                        borderColor: COLOR_DATE_RANGE_2,
+                        pointBackgroundColor: COLOR_DATE_RANGE_2,
+                    },
+                ],
             },
             options: {
                 scale: {
                     angleLines: {
                         display: false,
+                        fontSize: 40,
                     },
                     gridLines: {
                         color: 'white',
                     },
                     ticks: {
-                        suggestedMin: 0,
-                        suggestedMax: 2,
+                        beginAtZero: true,
+                        max: max > MIN_SCALE_SIZE ? max : MIN_SCALE_SIZE,
+                        stepSize: 1,
+                    },
+                    pointLabels: {
+                        fontSize: GRAPH_FONT_SIZE,
+                    },
+                },
+                legend: {
+                    display: true,
+                    labels: {
+                        fontSize: GRAPH_FONT_SIZE,
                     },
                 },
             },
         });
-    }, [tabDomains]);
+    }, [date1, date2, date3, date4]);
 
     return (
         <div className="spider-page">
-                Spider graph (radar graph with Chart.js)
+            <h2>Spider graph</h2>
+            <div className="date-form">
+                <label>
+                    {LABEL_DATE_RANGE_1}
+                    <input
+                        type="date"
+                        value={date1}
+                        onChange={handleDate1Change}
+                    />
+                    <input
+                        type="date"
+                        value={date2}
+                        onChange={handleDate2Change}
+                    />
+                </label>
+                <label>
+                    {LABEL_DATE_RANGE_2}
+                    <input
+                        type="date"
+                        value={date3}
+                        onChange={handleDate3Change}
+                    />
+                    <input
+                        type="date"
+                        value={date4}
+                        onChange={handleDate4Change}
+                    />
+                </label>
+            </div>
             <canvas ref={canvasRef} />
-
-            <form onSubmit={handleInputChange}>
-                <div className="row">
-                    <div className="column">
-                        <div className="row">
-                            <label>
-          Date début période 1 :
-                                {' '}
-                                {state.date1}
-                                <input
-                                    type="date"
-                                    id="0"
-                                    onChange={mySubmitHandler}
-                                />
-                                {' '}
-
-                            </label>
-                        </div>
-                        <div className="row">
-                            <label>
-          Date fin période 1 :
-                                {' '}
-                                {state.date2}
-                                <input
-                                    type="date"
-                                    id="1"
-                                    onChange={mySubmitHandler}
-                                    placeholder="dd-mm-yyyy"
-                                />
-                                {' '}
-                            </label>
-                        </div>
-                    </div>
-                    <div className="column">
-                        <div className="row">
-                            <label>
-          Date début période 2 :
-                                {' '}
-                                {state.date3}
-                                <input
-                                    type="date"
-                                    id="2"
-                                    onChange={mySubmitHandler}
-                                />
-                                {' '}
-                            </label>
-                        </div>
-                        <div className="row">
-                            <label>
-          Date fin période 2 :
-                                {' '}
-                                {state.date4}
-                                <input
-                                    type="date"
-                                    id="3"
-                                    onChange={mySubmitHandler}
-                                />
-                                {' '}
-                            </label>
-                        </div>
-                        <input
-                            type="submit"
-                            value="Submit"
-                            onSubmit={handleInputChange}
-                        />
-                    </div>
-
-                </div>
-            </form>
-
         </div>
     );
 };
