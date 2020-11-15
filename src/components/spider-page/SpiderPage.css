@@ -1,44 +1,27 @@
 .spider-page {
-    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
 }
 
-.spider-page input {
-    font-size: 20pt;
+.spider-page h2 {
+    color: antiquewhite
 }
 
-.spider-page label {
+.spider-page .date-form {
+    display: flex;
     flex-direction: column;
- }
-    
-
-.spider-page input[type=submit] {
-    font-size: 12pt;
-    padding: 8px 16px;
-    cursor: pointer;
 }
 
-.spider-page * {
-  box-sizing: border-box;
+.spider-page .date-form label + label {
+    margin-top: 10px;
 }
 
-.spider-page .column {
-  float: left;
-  width: 50%;
-  padding: 10px;
+.spider-page .date-form input {
+    margin-left: 15px;
 }
 
-.spider-page .row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 600px) {
-  .spider-page .column {
-    width: 100%;
-  }
+.spider-page canvas {
+    margin-top: 20px;
 }
