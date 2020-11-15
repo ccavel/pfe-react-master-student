@@ -1,4 +1,15 @@
+import cueData from 'components/seismograph-page/seismograph.data';
+import { setXYRValue, selectAllSubdomain, changeYvalue } from 'components/seismograph-page/seismograph.helpers';
+
 let dragSrcEl = null;
+let namePreviousDropElt = 'unknown';
+let nameDropElt = 'unknown';
+const { tabCues } = cueData;
+
+// eslint-disable-next-line import/no-mutable-exports
+export let tabCueXYR = setXYRValue(tabCues);
+// eslint-disable-next-line import/no-mutable-exports
+export let nameSubdomains = selectAllSubdomain(tabCues);
 
 function handleDragStart(e) {
     // Target (this) element is the source node.
@@ -12,11 +23,11 @@ function handleDragStart(e) {
 
 function handleDragOver(e) {
     if (e.preventDefault) {
-        e.preventDefault(); // Necessary. Allows us to drop.
+        e.preventDefault();
     }
     this.classList.add('over');
 
-    e.dataTransfer.dropEffect = 'move'; // See the section on the DataTransfer object.
+    e.dataTransfer.dropEffect = 'move';
 
     return false;
 }
@@ -41,9 +52,18 @@ function handleDrop(e) {
         // Set the source column's HTML to the HTML of the column we dropped on.
         this.parentNode.removeChild(dragSrcEl);
         const dropHTML = e.dataTransfer.getData('text/html');
+        // eslint-disable-next-line prefer-destructuring
+        nameDropElt = dropHTML.split('<header>')[1].split('</header')[0];
         this.insertAdjacentHTML('beforebegin', dropHTML);
         const dropElem = this.previousSibling;
+        if (dropElem.previousSibling !== null) {
+            // eslint-disable-next-line prefer-destructuring
+            namePreviousDropElt = dropElem.previousSibling.outerHTML.split('<header>')[1].split('</header')[0];
+        }
         addDnDHandlers(dropElem);
+        // Ici modification du tableau de données du graph.
+        [tabCueXYR, nameSubdomains] = changeYvalue(nameDropElt, namePreviousDropElt, nameSubdomains, tabCueXYR);
+        console.log('ici rajouter un chart.update');
     }
     this.classList.remove('over');
     return false;
@@ -52,7 +72,7 @@ function handleDrop(e) {
 function handleDragEnd() {
     // this/e.target is the source node.
     this.classList.remove('over');
-    console.log(dragSrcEl);
+    this.classList.remove('dragElem');
 }
 
 export function addDnDHandlers(elem) {
