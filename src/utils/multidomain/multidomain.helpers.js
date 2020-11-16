@@ -1,12 +1,14 @@
 import { DateTime } from 'luxon';
 
-const INPUT_DATE_FORMAT = 'yyyy-MM-dd';
-
-export const SEISMOGRAPH_DATE_FORMAT = 'yyyyLLdd';
-
 const uniqueFilter = (value, index, array) => array.indexOf(value) === index;
 
 export const getSubdomains = (tabCues) => tabCues.map((cue) => cue.subdomain).filter(uniqueFilter);
+
+/* ***********************************************************************
+ *      SPIDER
+ * ***********************************************************************/
+
+const INPUT_DATE_FORMAT = 'yyyy-MM-dd';
 
 // Compare dates using luxon library
 const withinRange = (occurenceDate, date1, date2) => {
@@ -34,6 +36,12 @@ export const getNbCuesBySubDomainForDateRange = (startDate, endDate, subDomains,
     }
     return nbCuesByDomain;
 };
+
+/* ***********************************************************************
+ *      SEISMOGRAPH
+ * ***********************************************************************/
+
+export const SEISMOGRAPH_DATE_FORMAT = 'yyyyLLdd';
 
 export const buildSeismographData = (cues) => {
     const cueOccurencesById = {}; // Id = <day>-<domain>, ex: 2020116-maritime

@@ -20,13 +20,16 @@ const MIN_SCALE_SIZE = 5;
 const GRAPH_FONT_SIZE = 16;
 
 const SpiderPage = () => {
+    // REF: reference to the canvas element, where the chart is rendered
+    const canvasRef = useRef();
+
     // STATE
     const [date1, setDate1] = useState();
     const [date2, setDate2] = useState();
     const [date3, setDate3] = useState();
     const [date4, setDate4] = useState();
 
-    // EVENT HANDLERS. (useCallback allows react to memorize the function, instead of redeclaring it on every render)
+    // EVENT HANDLERS
     const handleDate1Change = useCallback((event) => {
         setDate1(event.target.value);
     }, []);
@@ -40,10 +43,7 @@ const SpiderPage = () => {
         setDate4(event.target.value);
     }, []);
 
-    // REF
-    const canvasRef = useRef();
-
-    // Effect syncchronisation: Chart will be re-rendered in the canvas everytime one of the date changes
+    // EFFECT SYNCHRONIZATION: Chart will be re-rendered everytime one of the date changes
     useEffect(() => {
         const subDomains = getSubdomains(tabCues);
         const nbCuesBySubDomainForDateRange1 = getNbCuesBySubDomainForDateRange(date1, date2, subDomains, tabCues);
@@ -91,6 +91,7 @@ const SpiderPage = () => {
                 },
                 legend: {
                     display: true,
+                    position: 'right',
                     labels: {
                         fontSize: GRAPH_FONT_SIZE,
                     },
@@ -102,35 +103,39 @@ const SpiderPage = () => {
     return (
         <div className="spider-page">
             <h2>Spider graph</h2>
-            <div className="date-form">
-                <label>
-                    {LABEL_DATE_RANGE_1}
-                    <input
-                        type="date"
-                        value={date1}
-                        onChange={handleDate1Change}
-                    />
-                    <input
-                        type="date"
-                        value={date2}
-                        onChange={handleDate2Change}
-                    />
-                </label>
-                <label>
-                    {LABEL_DATE_RANGE_2}
-                    <input
-                        type="date"
-                        value={date3}
-                        onChange={handleDate3Change}
-                    />
-                    <input
-                        type="date"
-                        value={date4}
-                        onChange={handleDate4Change}
-                    />
-                </label>
+            <div className="container">
+                <div className="date-form">
+                    <label>
+                        {LABEL_DATE_RANGE_1}
+                        <input
+                            type="date"
+                            value={date1}
+                            onChange={handleDate1Change}
+                        />
+                        <input
+                            type="date"
+                            value={date2}
+                            onChange={handleDate2Change}
+                        />
+                    </label>
+                    <label>
+                        {LABEL_DATE_RANGE_2}
+                        <input
+                            type="date"
+                            value={date3}
+                            onChange={handleDate3Change}
+                        />
+                        <input
+                            type="date"
+                            value={date4}
+                            onChange={handleDate4Change}
+                        />
+                    </label>
+                </div>
+                <div className="chart-container">
+                    <canvas ref={canvasRef} />
+                </div>
             </div>
-            <canvas ref={canvasRef} />
         </div>
     );
 };

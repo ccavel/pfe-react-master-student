@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+/* eslint-disable no-param-reassign */
+/* eslint-disable max-lines-per-function */
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Chart from 'chart.js';
 import { DateTime } from 'luxon';
 
@@ -10,14 +12,50 @@ import './SeismographPage.css';
 const { tabCues } = cueData;
 
 const SeismographPage = () => {
+    // REF: reference to the canvas element, where the chart is rendered
     const canvasRef = useRef();
-    const [subdomains, setSubDomains] = useState(getSubdomains(tabCues));
 
+    // STATE
+    const [subdomains, setSubDomains] = useState(getSubdomains(tabCues));
+    const [subdomainHeight, setSubdomainHeight] = useState(0);
+
+    // HANDLERS
+    /* Source element */
+    const handleDragStart = useCallback((event) => {
+        event.target.style.opacity = 0.3;
+        event.dataTransfer.setData('subdomain', event.target.dataset.subdomain);
+    }, []);
+    const handleDragEnd = useCallback((event) => {
+        event.target.style.opacity = '';
+    }, []);
+    /* Target element */
+    const handleDragEnter = useCallback((event) => {
+        if (event.target.draggable) {
+            event.target.style.background = 'grey';
+        }
+    }, []);
+    const handleDragOver = useCallback((event) => event.preventDefault(), []);
+    const handleDragLeave = useCallback((event) => {
+        if (event.target.draggable) {
+            event.target.style.background = '';
+        }
+    }, []);
+    const handleDrop = useCallback((event) => {
+        const source = event.dataTransfer.getData('subdomain');
+        const target = event.target.dataset.subdomain;
+        const swappedArray = [...subdomains];
+        swappedArray[subdomains.indexOf(source)] = target;
+        swappedArray[subdomains.indexOf(target)] = source;
+        setSubDomains(swappedArray);
+        event.target.style.background = '';
+    }, [subdomains]);
+
+    // EFFECT SYNCHRONIZATION: Chart will be re-rendered everytime the order of the subdomains changes
     useEffect(() => {
         const seismographData = buildSeismographData(tabCues);
         const orderedData = orderSeismographDataBySubDomain(seismographData, subdomains);
         // eslint-disable-next-line no-new
-        new Chart(canvasRef.current, {
+        const chart = new Chart(canvasRef.current, {
             type: 'bubble',
             data: {
                 datasets: [
@@ -29,9 +67,6 @@ const SeismographPage = () => {
                 ],
             },
             options: {
-                events: ['click'],
-                responsive: true,
-                padding: 30,
                 legend: {
                     display: true,
                     position: 'bottom',
@@ -68,6 +103,7 @@ const SeismographPage = () => {
                 },
             },
         });
+        setSubdomainHeight(chart.scales['y-axis-0'].getPixelForTick(1) - chart.scales['y-axis-0'].getPixelForTick(0));
     }, [subdomains]);
 
     return (
@@ -75,33 +111,30 @@ const SeismographPage = () => {
             <h2>Sismographe (all CCIR included)</h2>
             <div className="container">
                 <div className="subdomains">
-                    {subdomains
-                        .map((subdomain) => (
+                    {subdomains.map((subdomain) => (
+                        <div
+                            key={subdomain}
+                            style={{ height: subdomainHeight }}
+                            className="subdomain-wrapper"
+                        >
                             <div
-                                key={subdomain}
                                 draggable="true"
-                                onDragStart={(ev) => ev.dataTransfer.setData('text', subdomain)}
-                                onDragOver={(ev) => ev.preventDefault()}
-                                onDrop={(ev) => {
-                                    const source = ev.dataTransfer.getData('text');
-                                    const target = subdomain;
-                                    const indexSource = subdomains.indexOf(source);
-                                    const indexTarget = subdomains.indexOf(target);
-                                    const swap = [...subdomains];
-                                    swap[indexSource] = target;
-                                    swap[indexTarget] = source;
-                                    setSubDomains(swap);
-                                }}
+                                data-subdomain={subdomain}
+                                onDragStart={handleDragStart}
+                                onDragEnd={handleDragEnd}
+                                onDragOver={handleDragOver}
+                                onDrop={handleDrop}
+                                onDragEnter={handleDragEnter}
+                                onDragLeave={handleDragLeave}
                             >
                                 {subdomain}
                             </div>
-                        )).reverse() // Div are rendered in the oposite order compared to the graph
-                    }
+                        </div>
+                    )).reverse() /* Div are rendered in the oposite order compared to the graph */ }
                 </div>
-                <canvas
-                    id="myChart"
-                    ref={canvasRef}
-                />
+                <div className="chart-container">
+                    <canvas ref={canvasRef} />
+                </div>
             </div>
         </div>
     );
