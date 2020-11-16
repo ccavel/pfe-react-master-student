@@ -3,7 +3,8 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Chart from 'chart.js';
 
-import { getSubdomains, getNbCuesBySubDomainForDateRange } from './spider.helpers';
+import { getSubdomains, getNbCuesBySubDomainForDateRange } from 'utils/multidomain';
+
 import data from './spider.data';
 import './SpiderPage.css';
 

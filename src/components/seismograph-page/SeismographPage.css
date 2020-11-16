@@ -1,64 +1,24 @@
-.title {
+.seismograph-page h2 {
     text-align: center;
     color: antiquewhite;
 }
-.container {
-    align-items: stretch;
-    flex-direction: row;
-    display: flex;
-}
-.margin {
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    
-}
-.columns {
-    width: 162px;
-    list-style-type: none;
-    cursor: move;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    margin-top: 30px
-}
 
- .column {
-    height: 100%;
-    list-style-type: none;
-    margin: 10px;
-    text-justify: center;
-
-}
-
-.column header {
-    height:100%; 
-    color: #ddd;
-    background-color: rgba(34, 34, 34, 0.589);
-    border-bottom: 1px solid #ddd;
-    border-radius: 10px;
-    border: 2px solid #666666;
-    vertical-align: middle;
-} 
-.column.dragElem {
-    opacity: 0.4;
-}
-.column.over {
-    border-top: 2px solid rgb(255, 187, 0);
-}
-
-[draggable] {
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -khtml-user-drag: element;
-    -webkit-user-drag: element;
-}
-.sismographContainer {
-    padding-top: 20px;
+.seismograph-page .container {
     color: white;
-    flex: 999 999 auto;
+    display: flex;
+}
+
+
+.seismograph-page .container .subdomains div {
+    margin: 10px;
+    border: 1px solid gold;
+    width: 200px;
+    height: 100px;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: slateblue;
 }
