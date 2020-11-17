@@ -11,6 +11,11 @@ import './SeismographPage.css';
 
 const { tabCues } = cueData;
 
+// Colors in the graph
+const labelColor = 'white';
+const gridLineColor = 'white';
+const ticksColor = 'white';
+
 const SeismographPage = () => {
     // REF: reference to the canvas element, where the chart is rendered
     const canvasRef = useRef();
@@ -18,6 +23,44 @@ const SeismographPage = () => {
     // STATE
     const [subdomains, setSubDomains] = useState(getSubdomains(tabCues));
     const [subdomainHeight, setSubdomainHeight] = useState(0);
+
+    // OPTION GRAPHIC STYLE
+    const graphOptions = {
+        legend: {
+            display: true,
+            position: 'bottom',
+            labels: {
+                fontColor: labelColor,
+            },
+        },
+        scales: {
+            yAxes: [
+                {
+                    gridLines: {
+                        color: gridLineColor,
+                    },
+                    ticks: {
+                        min: 0,
+                        max: subdomains.length,
+                        stepSize: 1,
+                        callback: () => '',
+                    },
+                },
+            ],
+            xAxes: [
+                {
+                    gridLines: {
+                        color: gridLineColor,
+                    },
+                    ticks: {
+                        fontColor: ticksColor,
+                        stepSize: 1,
+                        callback: (value) => DateTime.fromFormat(value.toString(), SEISMOGRAPH_DATE_FORMAT).toFormat('dd/MM/yyyy'),
+                    },
+                },
+            ],
+        },
+    };
 
     // HANDLERS
     /* Source element */
@@ -66,45 +109,10 @@ const SeismographPage = () => {
                     },
                 ],
             },
-            options: {
-                legend: {
-                    display: true,
-                    position: 'bottom',
-                    labels: {
-                        fontColor: 'white',
-                    },
-                },
-                scales: {
-                    yAxes: [
-                        {
-                            gridLines: {
-                                color: 'white',
-                            },
-                            ticks: {
-                                min: 0,
-                                max: subdomains.length,
-                                stepSize: 1,
-                                callback: () => '',
-                            },
-                        },
-                    ],
-                    xAxes: [
-                        {
-                            gridLines: {
-                                color: 'white',
-                            },
-                            ticks: {
-                                fontColor: 'white',
-                                stepSize: 1,
-                                callback: (value) => DateTime.fromFormat(value.toString(), SEISMOGRAPH_DATE_FORMAT).toFormat('dd/MM/yyyy'),
-                            },
-                        },
-                    ],
-                },
-            },
+            options: graphOptions,
         });
         setSubdomainHeight(chart.scales['y-axis-0'].getPixelForTick(1) - chart.scales['y-axis-0'].getPixelForTick(0));
-    }, [subdomains]);
+    }, [graphOptions, subdomains]);
 
     return (
         <div className="seismograph-page">

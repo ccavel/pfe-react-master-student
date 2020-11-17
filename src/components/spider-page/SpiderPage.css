@@ -1,10 +1,15 @@
+.spider-page {
+    --title-color: white;
+    --title-text-container-color: white;
+}
+
 .spider-page h2 {
     text-align: center;
-    color: antiquewhite;
+    color: var(--title-color);
 }
 
 .spider-page .container {
-    color: white;
+    color: var(--title-text-container-color);
     display: flex;
     padding: 20px;
 }

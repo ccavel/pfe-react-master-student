@@ -1,10 +1,16 @@
+.seismograph-page {
+    --title-color: rgb(255,255,0.1);
+    --title-legend-subdomain-color: pink;
+    --boder-legend-subdomain-color: grey;
+}
+
 .seismograph-page h2 {
     text-align: center;
-    color: antiquewhite;
+    color: var(--title-color);
 }
 
 .seismograph-page .container {
-    color: white;
+    color: var(--title-legend-subdomain-color);
     display: flex;
     padding: 20px;
 }
@@ -26,7 +32,7 @@
     align-items: center;
     width: 100%;
     height: 80%;
-    border: 1px solid white;
+    border: 1px solid var(--boder-legend-subdomain-color);
     border-radius: 5px;
     user-select: none;
     cursor: pointer;
