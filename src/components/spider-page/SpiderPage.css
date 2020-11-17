@@ -1,20 +1,24 @@
-.spider-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-}
-
 .spider-page h2 {
-    color: antiquewhite
+    text-align: center;
+    color: antiquewhite;
 }
 
-.spider-page .date-form {
+.spider-page .container {
+    color: white;
+    display: flex;
+    padding: 20px;
+}
+
+.spider-page .container .date-form {
+    min-width: 500px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
 }
 
-.spider-page .date-form label + label {
+.spider-page .container .date-form label + label {
     margin-top: 10px;
 }
 
@@ -22,6 +26,8 @@
     margin-left: 15px;
 }
 
-.spider-page canvas {
-    margin-top: 20px;
+.spider-page .chart-container {
+    margin-top: 30px;
+    position: relative;
+    flex: 1;
 }

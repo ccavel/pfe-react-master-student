@@ -1,64 +1,38 @@
-.title {
+.seismograph-page h2 {
     text-align: center;
     color: antiquewhite;
 }
-.container {
-    align-items: stretch;
-    flex-direction: row;
-    display: flex;
-}
-.margin {
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    
-}
-.columns {
-    width: 162px;
-    list-style-type: none;
-    cursor: move;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    margin-top: 30px
-}
 
- .column {
-    height: 100%;
-    list-style-type: none;
-    margin: 10px;
-    text-justify: center;
-
-}
-
-.column header {
-    height:100%; 
-    color: #ddd;
-    background-color: rgba(34, 34, 34, 0.589);
-    border-bottom: 1px solid #ddd;
-    border-radius: 10px;
-    border: 2px solid #666666;
-    vertical-align: middle;
-} 
-.column.dragElem {
-    opacity: 0.4;
-}
-.column.over {
-    border-top: 2px solid rgb(255, 187, 0);
-}
-
-[draggable] {
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -khtml-user-drag: element;
-    -webkit-user-drag: element;
-}
-.sismographContainer {
-    padding-top: 20px;
+.seismograph-page .container {
     color: white;
-    flex: 999 999 auto;
+    display: flex;
+    padding: 20px;
+}
+
+.seismograph-page .container .subdomains {
+    margin-right: 20px;
+}
+
+.seismograph-page .container .subdomains .subdomain-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.seismograph-page .container .subdomains .subdomain-wrapper  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    border: 1px solid white;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.seismograph-page .chart-container {
+    position: relative;
+    width: 80vw;
 }
