@@ -27,6 +27,9 @@ const SeismographPage = () => {
     // OPTION GRAPHIC STYLE
     const graphOptions = {
         events: ['click'],
+        animation: {
+            duration: 0,
+        },
         legend: {
             display: true,
             position: 'bottom',
@@ -50,13 +53,20 @@ const SeismographPage = () => {
             ],
             xAxes: [
                 {
+                    type: 'time',
+                    time: {
+                        unit: 'month',
+                        displayFormats: {
+                            week: 'll',
+                        },
+                    },
                     gridLines: {
                         color: gridLineColor,
                     },
                     ticks: {
                         fontColor: ticksColor,
                         stepSize: 1,
-                        callback: (value) => DateTime.fromFormat(value.toString(), SEISMOGRAPH_DATE_FORMAT).toFormat('dd/MM/yyyy'),
+                        // callback: (value) => DateTime.fromFormat(value.toString(), SEISMOGRAPH_DATE_FORMAT).toFormat('dd/MM/yyyy'),
                     },
                 },
             ],
@@ -72,6 +82,7 @@ const SeismographPage = () => {
     }, []);
     const handleDragEnd = useCallback((event) => {
         event.target.style.opacity = '';
+        event.target.style.border = '1px solid grey';
     }, []);
     /* Target element */
     const handleDragEnter = useCallback((event) => {

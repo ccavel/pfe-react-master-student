@@ -147,6 +147,89 @@
         "warningCriteriaNightRed": "COM",
         "weighting": 17,
         "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "5",
+            "startDate": "2020-10-23T15:21:34.122Z"
+          }
+        ],
+        "description": "desc3",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "3"
+        ],
+        "name": "cue n°5",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-10-23T15:21:34.122Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          },
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 3,
+            "computationTime": "2020-10-30T15:21:34.122Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "International",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 14,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "6",
+            "startDate": "2020-11-02T15:21:34.122Z"
+          }
+        ],
+        "description": "desc6",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "6"
+        ],
+        "name": "cue n°6",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-11-02T15:21:34.122Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Humanitarian",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 17,
+        "emergenceOriginId": "string"
       }
     ]
   }
