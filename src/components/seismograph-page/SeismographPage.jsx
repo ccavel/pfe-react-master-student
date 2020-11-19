@@ -37,6 +37,14 @@ const SeismographPage = () => {
                 fontColor: labelColor,
             },
         },
+        layout: {
+            padding: {
+                left: 50,
+                right: 50,
+                top: 0,
+                bottom: 0,
+            },
+        },
         scales: {
             yAxes: [
                 {
@@ -55,9 +63,9 @@ const SeismographPage = () => {
                 {
                     type: 'time',
                     time: {
-                        unit: 'month',
+                        unit: 'week',
                         displayFormats: {
-                            week: 'll',
+                            week: 'DD/MM/YYYY',
                         },
                     },
                     gridLines: {
@@ -154,7 +162,10 @@ const SeismographPage = () => {
                     )).reverse() /* Div are rendered in the oposite order compared to the graph */ }
                 </div>
                 <div className="chart-container">
-                    <canvas ref={canvasRef} />
+                    <canvas
+                        ref={canvasRef}
+                        className="chart"
+                    />
                 </div>
             </div>
         </div>
