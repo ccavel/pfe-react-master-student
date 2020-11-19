@@ -1,6 +1,8 @@
 .spider-page {
     --title-color: white;
     --title-text-container-color: white;
+    --background-text-input-color: grey;
+    --text-input-color: black;
 }
 
 .spider-page h2 {
@@ -13,7 +15,10 @@
     display: flex;
     padding: 20px;
 }
-
+.spider-page .inputDate {
+    background-color: var(--background-text-input-color);
+    color: var(--text-input-color);
+}
 .spider-page .container .date-form {
     min-width: 500px;
     display: flex;

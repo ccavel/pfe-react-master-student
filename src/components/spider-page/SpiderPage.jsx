@@ -111,11 +111,13 @@ const SpiderPage = () => {
                             type="date"
                             value={date1}
                             onChange={handleDate1Change}
+                            className="inputDate"
                         />
                         <input
                             type="date"
                             value={date2}
                             onChange={handleDate2Change}
+                            className="inputDate"
                         />
                     </label>
                     <label>
@@ -124,11 +126,13 @@ const SpiderPage = () => {
                             type="date"
                             value={date3}
                             onChange={handleDate3Change}
+                            className="inputDate"
                         />
                         <input
                             type="date"
                             value={date4}
                             onChange={handleDate4Change}
+                            className="inputDate"
                         />
                     </label>
                 </div>
