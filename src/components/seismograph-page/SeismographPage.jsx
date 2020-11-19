@@ -26,6 +26,7 @@ const SeismographPage = () => {
 
     // OPTION GRAPHIC STYLE
     const graphOptions = {
+        events: ['click'],
         legend: {
             display: true,
             position: 'bottom',

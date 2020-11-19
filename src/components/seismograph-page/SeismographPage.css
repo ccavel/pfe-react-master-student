@@ -1,6 +1,6 @@
 .seismograph-page {
-    --title-color: rgb(255,255,0.1);
-    --title-legend-subdomain-color: pink;
+    --title-color: white;
+    --title-legend-subdomain-color: #bbbbbb;
     --boder-legend-subdomain-color: grey;
 }
 

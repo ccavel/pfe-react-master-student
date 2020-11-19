@@ -72,6 +72,7 @@ const SpiderPage = () => {
                 ],
             },
             options: {
+                events: [''],
                 scale: {
                     angleLines: {
                         display: false,
