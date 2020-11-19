@@ -1,9 +1,13 @@
 .spider-page {
     --title-color: white;
-    --title-text-container-color: grey;
-    --background-text-input-color: grey;
+    --title-text-container-color: rgb(206, 205, 205);
     --text-input-color: black;
     --border-text-input-color: rgb(46, 46, 46);
+
+    --blue-border-graph: #54A2E5;
+    --blue-inside-graph: #54a1e557;;
+    --red-border-graph: #ED6E85;
+    --red-inside-graph: #542E35;
 }
 
 .spider-page h2 {
@@ -16,11 +20,34 @@
     display: flex;
     padding: 20px;
 }
-.spider-page .inputDate {
-    background-color: var(--background-text-input-color);
+
+.spider-page .container .date-form .legend-blue {
+    border: 3px solid var(--blue-border-graph);
+    background-color: var(--blue-inside-graph);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.spider-page .container .date-form .legend-red {
+    border: 3px solid var(--red-border-graph);
+    background-color: var(--red-inside-graph);
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+.spider-page .container .date-form .legend-blue .inputDate {
+    background-color: var(--blue-border-graph);
     color: var(--text-input-color);
     border-color: var(--border-text-input-color);
 }
+
+.spider-page .container .date-form .legend-red .inputDate {
+    background-color: var(--red-border-graph);
+    color: var(--text-input-color);
+    border-color: var(--border-text-input-color);
+}
+
 .spider-page .container .date-form {
     min-width: 500px;
     display: flex;

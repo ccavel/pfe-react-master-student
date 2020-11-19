@@ -79,7 +79,7 @@ const SpiderPage = () => {
                         fontSize: 40,
                     },
                     gridLines: {
-                        color: 'white',
+                        color: 'grey',
                     },
                     ticks: {
                         beginAtZero: true,
@@ -88,10 +88,12 @@ const SpiderPage = () => {
                     },
                     pointLabels: {
                         fontSize: GRAPH_FONT_SIZE,
+                        fontColor: 'white',
+                        fontStyle: 'bold',
                     },
                 },
                 legend: {
-                    display: true,
+                    display: false,
                     position: 'right',
                     labels: {
                         fontSize: GRAPH_FONT_SIZE,
@@ -106,36 +108,40 @@ const SpiderPage = () => {
             <h2>Spider graph</h2>
             <div className="container">
                 <div className="date-form">
-                    <label>
-                        {LABEL_DATE_RANGE_1}
-                        <input
-                            type="date"
-                            value={date1}
-                            onChange={handleDate1Change}
-                            className="inputDate"
-                        />
-                        <input
-                            type="date"
-                            value={date2}
-                            onChange={handleDate2Change}
-                            className="inputDate"
-                        />
-                    </label>
-                    <label>
-                        {LABEL_DATE_RANGE_2}
-                        <input
-                            type="date"
-                            value={date3}
-                            onChange={handleDate3Change}
-                            className="inputDate"
-                        />
-                        <input
-                            type="date"
-                            value={date4}
-                            onChange={handleDate4Change}
-                            className="inputDate"
-                        />
-                    </label>
+                    <div className="legend-blue">
+                        <label>
+                            {LABEL_DATE_RANGE_1}
+                            <input
+                                type="date"
+                                value={date1}
+                                onChange={handleDate1Change}
+                                className="inputDate"
+                            />
+                            <input
+                                type="date"
+                                value={date2}
+                                onChange={handleDate2Change}
+                                className="inputDate"
+                            />
+                        </label>
+                    </div>
+                    <div className="legend-red">
+                        <label>
+                            {LABEL_DATE_RANGE_2}
+                            <input
+                                type="date"
+                                value={date3}
+                                onChange={handleDate3Change}
+                                className="inputDate"
+                            />
+                            <input
+                                type="date"
+                                value={date4}
+                                onChange={handleDate4Change}
+                                className="inputDate"
+                            />
+                        </label>
+                    </div>
                 </div>
                 <div className="chart-container">
                     <canvas ref={canvasRef} />
