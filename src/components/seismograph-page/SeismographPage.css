@@ -1,6 +1,6 @@
 .seismograph-page {
     --title-color: white;
-    --title-legend-subdomain-color: #bbbbbb;
+    --title-legend-subdomain-color: rgb(255, 255, 255);
     --boder-legend-subdomain-color: grey;
 }
 
@@ -33,6 +33,7 @@
     width: 100%;
     height: 80%;
     border: 1px solid var(--boder-legend-subdomain-color);
+    background-color: rgb(49, 49, 49);
     border-radius: 5px;
     user-select: none;
     cursor: pointer;
@@ -41,4 +42,7 @@
 .seismograph-page .chart-container {
     position: relative;
     width: 80vw;
+}
+.seismograph-page .over {
+    background-color: #fc0;
 }

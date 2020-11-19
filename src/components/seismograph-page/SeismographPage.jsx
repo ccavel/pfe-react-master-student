@@ -13,7 +13,7 @@ const { tabCues } = cueData;
 
 // Colors in the graph
 const labelColor = 'white';
-const gridLineColor = 'white';
+const gridLineColor = 'grey';
 const ticksColor = 'white';
 
 const SeismographPage = () => {
@@ -68,6 +68,7 @@ const SeismographPage = () => {
     const handleDragStart = useCallback((event) => {
         event.target.style.opacity = 0.3;
         event.dataTransfer.setData('subdomain', event.target.dataset.subdomain);
+        event.target.style.border = '1px solid #fc0';
     }, []);
     const handleDragEnd = useCallback((event) => {
         event.target.style.opacity = '';
@@ -105,7 +106,7 @@ const SeismographPage = () => {
                 datasets: [
                     {
                         label: 'Cues appearance and weighting',
-                        backgroundColor: 'rgba(255, 0, 0, 0.6)',
+                        backgroundColor: 'rgba(255, 0, 0, 1)',
                         data: orderedData,
                     },
                 ],
@@ -117,7 +118,7 @@ const SeismographPage = () => {
 
     return (
         <div className="seismograph-page">
-            <h2>Sismographe (all CCIR included)</h2>
+            <h2>Seismographe</h2>
             <div className="container">
                 <div className="subdomains">
                     {subdomains.map((subdomain) => (
