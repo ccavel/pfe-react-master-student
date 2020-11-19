@@ -2,10 +2,15 @@
 /* eslint-disable max-lines-per-function */
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Chart from 'chart.js';
-import { DateTime } from 'luxon';
+// import { DateTime } from 'luxon';
 
 import cueData from 'components/seismograph-page/seismograph.data';
-import { getSubdomains, buildSeismographData, orderSeismographDataBySubDomain, SEISMOGRAPH_DATE_FORMAT } from 'utils/multidomain';
+import { getSubdomains,
+    buildSeismographData,
+    orderSeismographDataBySubDomain,
+    // SEISMOGRAPH_DATE_FORMAT
+    // eslint-disable-next-line object-curly-newline
+} from 'utils/multidomain';
 
 import './SeismographPage.css';
 
@@ -162,10 +167,7 @@ const SeismographPage = () => {
                     )).reverse() /* Div are rendered in the oposite order compared to the graph */ }
                 </div>
                 <div className="chart-container">
-                    <canvas
-                        ref={canvasRef}
-                        className="chart"
-                    />
+                    <canvas ref={canvasRef} />
                 </div>
             </div>
         </div>
