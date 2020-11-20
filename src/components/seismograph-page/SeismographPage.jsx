@@ -68,7 +68,7 @@ const SeismographPage = () => {
                 {
                     type: 'time',
                     time: {
-                        unit: 'week',
+                        unit: 'day',
                         displayFormats: {
                             week: 'DD/MM/YYYY',
                         },

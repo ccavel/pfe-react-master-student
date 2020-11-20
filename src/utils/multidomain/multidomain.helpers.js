@@ -70,7 +70,7 @@ export const buildSeismographData = (cues) => {
         ...o,
         x: o.dayNumber, // x-axis = day
         // y-axis = domain. Domains can be dinamycally re-ordered so the y value is calculated in a dedicated function
-        r: o.nbOccurences * o.weighting, // radius: nb of occurences of the cue multiplied by its weight
+        r: o.weighting, // radius: weight of the cue
     }));
 };
 

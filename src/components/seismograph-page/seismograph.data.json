@@ -1,235 +1,1077 @@
 {
-    "tabCues": [
-      {
-        "action": [
-          {
-            "id": "1",
-            "startDate": "2020-10-02T15:16:42.427Z"
-          }
-        ],
-        "description": "desc1",
-        "iconType": "string",
-        "id": "string",
-        "isRepettitive": true,
-        "isSuperCue": true,
-        "triggerIds": [
-          "1"
-        ],
-        "name": "cue n°1",
-        "number": 0,
-        "occurences": [
-          {
-            "minedDocumentId": "string",
-            "miningState": true,
-            "sourceQuality": 0,
-            "computationTime": "2020-10-02T15:16:42.427Z",
-            "lat": 0,
-            "lon": 0,
-            "cueEventId": "string"
-          }
-        ],
-        "lat": 0,
-        "lon": 0,
-        "icon": "string",
-        "subdomain": "Political",
-        "warningCriteriaDayRed": "COM",
-        "warningCriteriaNightRed": "COM",
-        "weighting": 5,
-        "emergenceOriginId": "string"
-      },
-      {
-        "action": [
-          {
-            "id": "2",
-            "startDate": "2020-10-03T15:11:12.727Z"
-          }
-        ],
-        "description": "desc2",
-        "iconType": "string",
-        "id": "string",
-        "isRepettitive": true,
-        "isSuperCue": true,
-        "triggerIds": [
-          "2"
-        ],
-        "name": "cue n°2",
-        "number": 0,
-        "occurences": [
-          {
-            "minedDocumentId": "string",
-            "miningState": true,
-            "sourceQuality": 0,
-            "computationTime": "2020-10-03T15:11:12.727Z",
-            "lat": 0,
-            "lon": 0,
-            "cueEventId": "string"
-          }
-        ],
-        "lat": 0,
-        "lon": 0,
-        "icon": "string",
-        "subdomain": "Political",
-        "warningCriteriaDayRed": "COM",
-        "warningCriteriaNightRed": "COM",
-        "weighting": 15,
-        "emergenceOriginId": "string"
-      },
-      {
-        "action": [
-          {
-            "id": "3",
-            "startDate": "2020-10-05T15:21:34.122Z"
-          }
-        ],
-        "description": "desc3",
-        "iconType": "string",
-        "id": "string",
-        "isRepettitive": true,
-        "isSuperCue": true,
-        "triggerIds": [
-          "3"
-        ],
-        "name": "cue n°3",
-        "number": 0,
-        "occurences": [
-          {
-            "minedDocumentId": "string",
-            "miningState": true,
-            "sourceQuality": 0,
-            "computationTime": "2020-10-05T15:21:34.122Z",
-            "lat": 0,
-            "lon": 0,
-            "cueEventId": "string"
-          }
-        ],
-        "lat": 0,
-        "lon": 0,
-        "icon": "string",
-        "subdomain": "Cyber",
-        "warningCriteriaDayRed": "COM",
-        "warningCriteriaNightRed": "COM",
-        "weighting": 25,
-        "emergenceOriginId": "string"
-      },
-      {
-        "action": [
-          {
-            "id": "3",
-            "startDate": "2020-10-05T15:21:34.122Z"
-          }
-        ],
-        "description": "desc3",
-        "iconType": "string",
-        "id": "string",
-        "isRepettitive": true,
-        "isSuperCue": true,
-        "triggerIds": [
-          "3"
-        ],
-        "name": "cue n°3",
-        "number": 0,
-        "occurences": [
-          {
-            "minedDocumentId": "string",
-            "miningState": true,
-            "sourceQuality": 0,
-            "computationTime": "2020-10-05T15:21:34.122Z",
-            "lat": 0,
-            "lon": 0,
-            "cueEventId": "string"
-          }
-        ],
-        "lat": 0,
-        "lon": 0,
-        "icon": "string",
-        "subdomain": "Air",
-        "warningCriteriaDayRed": "COM",
-        "warningCriteriaNightRed": "COM",
-        "weighting": 17,
-        "emergenceOriginId": "string"
-      },
-      {
-        "action": [
-          {
-            "id": "5",
-            "startDate": "2020-10-23T15:21:34.122Z"
-          }
-        ],
-        "description": "desc3",
-        "iconType": "string",
-        "id": "string",
-        "isRepettitive": true,
-        "isSuperCue": true,
-        "triggerIds": [
-          "3"
-        ],
-        "name": "cue n°5",
-        "number": 0,
-        "occurences": [
-          {
-            "minedDocumentId": "string",
-            "miningState": true,
-            "sourceQuality": 0,
-            "computationTime": "2020-10-23T15:21:34.122Z",
-            "lat": 0,
-            "lon": 0,
-            "cueEventId": "string"
-          },
-          {
-            "minedDocumentId": "string",
-            "miningState": true,
-            "sourceQuality": 3,
-            "computationTime": "2020-10-30T15:21:34.122Z",
-            "lat": 0,
-            "lon": 0,
-            "cueEventId": "string"
-          }
-        ],
-        "lat": 0,
-        "lon": 0,
-        "icon": "string",
-        "subdomain": "International",
-        "warningCriteriaDayRed": "COM",
-        "warningCriteriaNightRed": "COM",
-        "weighting": 14,
-        "emergenceOriginId": "string"
-      },
-      {
-        "action": [
-          {
-            "id": "6",
-            "startDate": "2020-11-02T15:21:34.122Z"
-          }
-        ],
-        "description": "desc6",
-        "iconType": "string",
-        "id": "string",
-        "isRepettitive": true,
-        "isSuperCue": true,
-        "triggerIds": [
-          "6"
-        ],
-        "name": "cue n°6",
-        "number": 0,
-        "occurences": [
-          {
-            "minedDocumentId": "string",
-            "miningState": true,
-            "sourceQuality": 0,
-            "computationTime": "2020-11-02T15:21:34.122Z",
-            "lat": 0,
-            "lon": 0,
-            "cueEventId": "string"
-          }
-        ],
-        "lat": 0,
-        "lon": 0,
-        "icon": "string",
-        "subdomain": "Humanitarian",
-        "warningCriteriaDayRed": "COM",
-        "warningCriteriaNightRed": "COM",
-        "weighting": 17,
-        "emergenceOriginId": "string"
-      }
-    ]
-  }
+  "tabCues": [
+    {
+      "action": [
+        {
+          "id": "1",
+          "startDate": "2020-01-01T15:16:42.427Z"
+        }
+      ],
+      "description": "desc1",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "1"
+      ],
+      "name": "cue n°1",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-01T15:16:42.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Agriculteur",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 5,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "2",
+          "startDate": "2020-01-01T08:11:12.727Z"
+        }
+      ],
+      "description": "desc2",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "2"
+      ],
+      "name": "cue n°2",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-01T08:11:12.727Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Étudiant",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 5,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "3",
+          "startDate": "2020-01-01T10:21:34.122Z"
+        }
+      ],
+      "description": "desc3",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "3"
+      ],
+      "name": "cue n°3",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-01T10:21:34.122Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Retraité",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 5,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "4",
+          "startDate": "2020-01-01T02:54:34.122Z"
+        }
+      ],
+      "description": "desc4",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "4"
+      ],
+      "name": "cue n°4",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-01T02:54:34.122Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Ouvrier",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 15,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "5",
+          "startDate": "2020-01-01T14:50:34.122Z"
+        }
+      ],
+      "description": "desc5",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "5"
+      ],
+      "name": "cue n°5",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-01T14:50:34.122Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Artisant/Commerçant",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 15,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "6",
+          "startDate": "2020-01-01T21:21:34.122Z"
+        }
+      ],
+      "description": "desc6",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "6"
+      ],
+      "name": "cue n°6",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-01T21:21:34.122Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Artisant/Commerçant",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 25,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "7",
+          "startDate": "2020-01-01T12:04:34.122Z"
+        }
+      ],
+      "description": "desc7",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "7"
+      ],
+      "name": "cue n°7",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-01T12:04:34.122Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Autres",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 35,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "8",
+          "startDate": "2020-01-01T23:13:34.122Z"
+        }
+      ],
+      "description": "desc8",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "8"
+      ],
+      "name": "cue n°8",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-01T23:13:34.122Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Cadre",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 35,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "9",
+          "startDate": "2020-01-02T01:38:34.122Z"
+        }
+      ],
+      "description": "desc9",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "9"
+      ],
+      "name": "cue n°9",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T01:38:34.122Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Agriculteur",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 35,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "10",
+          "startDate": "2020-01-02T07:12:34.122Z"
+        }
+      ],
+      "description": "desc10",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "10"
+      ],
+      "name": "cue n°10",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T07:12:34.122Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Autres",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 35,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "11",
+          "startDate": "2020-01-02T07:20:32.427Z"
+        }
+      ],
+      "description": "desc11",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "11"
+      ],
+      "name": "cue n°11",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T07:20:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Étudiant",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 5,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "12",
+          "startDate": "2020-01-02T07:39:32.427Z"
+        }
+      ],
+      "description": "desc12",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "12"
+      ],
+      "name": "cue n°12",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T07:39:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Étudiant",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 5,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "13",
+          "startDate": "2020-01-02T10:17:32.427Z"
+        }
+      ],
+      "description": "desc13",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "13"
+      ],
+      "name": "cue n°13",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T10:17:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Cadre",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 5,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "14",
+          "startDate": "2020-01-02T10:44:32.427Z"
+        }
+      ],
+      "description": "desc14",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "14"
+      ],
+      "name": "cue n°14",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T10:44:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Étudiant",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 15,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "15",
+          "startDate": "2020-01-02T11:56:32.427Z"
+        }
+      ],
+      "description": "desc15",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "15"
+      ],
+      "name": "cue n°15",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T11:56:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Retraité",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 15,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "16",
+          "startDate": "2020-01-02T14:11:32.427Z"
+        }
+      ],
+      "description": "desc16",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "16"
+      ],
+      "name": "cue n°16",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T14:11:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Ouvrier",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 25,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "17",
+          "startDate": "2020-01-02T17:42:32.427Z"
+        }
+      ],
+      "description": "desc17",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "17"
+      ],
+      "name": "cue n°17",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime":  "2020-01-02T17:42:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Autres",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 35,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "18",
+          "startDate":  "2020-01-02T18:07:32.427Z"
+        }
+      ],
+      "description": "desc18",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "18"
+      ],
+      "name": "cue n°18",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T18:07:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Étudiant",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 35,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "19",
+          "startDate": "2020-01-02T18:30:32.427Z"
+        }
+      ],
+      "description": "desc19",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "19"
+      ],
+      "name": "cue n°19",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T18:30:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Étudiant",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 35,
+      "emergenceOriginId": "string"
+    },      
+    {
+      "action": [
+        {
+          "id": "20",
+          "startDate": "2020-01-02T20:43:32.427Z"
+        }
+      ],
+      "description": "desc20",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "20"
+      ],
+      "name": "cue n°20",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T20:43:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Cadre",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 5,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "21",
+          "startDate": "2020-01-02T23:02:32.427Z"
+        }
+      ],
+      "description": "desc21",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "21"
+      ],
+      "name": "cue n°21",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-02T23:02:32.427Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Sans Activité Professionnelle",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 5,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "22",
+          "startDate": "2020-01-03T02:36:32.727Z"
+        }
+      ],
+      "description": "desc22",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "22"
+      ],
+      "name": "cue n°22",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-03T02:36:32.727Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Retraité",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 5,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "23",
+          "startDate": "2020-01-03T06:21:56.727Z"
+        }
+      ],
+      "description": "desc23",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "23"
+      ],
+      "name": "cue n°23",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-03T06:21:56.727Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Cadre",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 5,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "24",
+          "startDate": "2020-01-03T13:13:12.727Z"
+        }
+      ],
+      "description": "desc24",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "24"
+      ],
+      "name": "cue n°24",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-03T13:13:12.727Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Étudiants",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 15,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "25",
+          "startDate": "2020-01-03T13:32:27.727Z"
+        }
+      ],
+      "description": "desc25",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "25"
+      ],
+      "name": "cue n°25",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-03T13:32:27.727Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Autres",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 15,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "26",
+          "startDate": "2020-01-03T13:46:02.727Z"
+        }
+      ],
+      "description": "desc26",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "26"
+      ],
+      "name": "cue n°26",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-03T13:46:02.727Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Cadre",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 25,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "27",
+          "startDate": "2020-01-03T16:00:47.727Z"
+        }
+      ],
+      "description": "desc27",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "27"
+      ],
+      "name": "cue n°27",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-03T16:00:47.727Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Ouvrier",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 35,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "28",
+          "startDate": "2020-01-03T17:09:54.727Z"
+        }
+      ],
+      "description": "desc28",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "28"
+      ],
+      "name": "cue n°28",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-03T17:09:54.727Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Étudiant",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 35,
+      "emergenceOriginId": "string"
+    },
+    {
+      "action": [
+        {
+          "id": "29",
+          "startDate": "2020-01-03T21:16:43.727Z"
+        }
+      ],
+      "description": "desc29",
+      "iconType": "string",
+      "id": "string",
+      "isRepettitive": true,
+      "isSuperCue": true,
+      "triggerIds": [
+        "29"
+      ],
+      "name": "cue n°29",
+      "number": 0,
+      "occurences": [
+        {
+          "minedDocumentId": "string",
+          "miningState": true,
+          "sourceQuality": 0,
+          "computationTime": "2020-01-03T21:16:43.727Z",
+          "lat": 0,
+          "lon": 0,
+          "cueEventId": "string"
+        }
+      ],
+      "lat": 0,
+      "lon": 0,
+      "icon": "string",
+      "subdomain": "Agriculteur",
+      "warningCriteriaDayRed": "COM",
+      "warningCriteriaNightRed": "COM",
+      "weighting": 35,
+      "emergenceOriginId": "string"
+    }
+  ]
+}
