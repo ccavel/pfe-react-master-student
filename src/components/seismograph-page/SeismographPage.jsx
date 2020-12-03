@@ -31,7 +31,7 @@ const SeismographPage = () => {
 
     // OPTION GRAPHIC STYLE
     const graphOptions = {
-        events: ['click'],
+        events: [''],
         animation: {
             duration: 0,
         },
