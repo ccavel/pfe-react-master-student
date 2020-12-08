@@ -2,7 +2,6 @@
 /* eslint-disable max-lines-per-function */
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Chart from 'chart.js';
-// import { DateTime } from 'luxon';
 
 import cueData from 'components/seismograph-page/seismograph.data';
 import { getSubdomains,
@@ -68,9 +67,12 @@ const SeismographPage = () => {
                 {
                     type: 'time',
                     time: {
-                        unit: 'day',
+                        unit: 'hour',
                         displayFormats: {
-                            week: 'DD/MM/YYYY',
+                            minute: 'h:mm a',
+                            hour: 'h:mm a',
+                            day: 'D/M/YYYY',
+                            month: 'D MM',
                         },
                     },
                     gridLines: {
@@ -79,7 +81,6 @@ const SeismographPage = () => {
                     ticks: {
                         fontColor: ticksColor,
                         stepSize: 1,
-                        // callback: (value) => DateTime.fromFormat(value.toString(), SEISMOGRAPH_DATE_FORMAT).toFormat('dd/MM/yyyy'),
                     },
                 },
             ],

@@ -41,17 +41,15 @@ export const getNbCuesBySubDomainForDateRange = (startDate, endDate, subDomains,
  *      SEISMOGRAPH
  * ***********************************************************************/
 
-export const SEISMOGRAPH_DATE_FORMAT = 'yyyyLLdd';
-
 export const buildSeismographData = (cues) => {
-    const cueOccurencesById = {}; // Id = <day>-<domain>, ex: 2020116-maritime
+    const cueOccurencesById = {}; // Id = <day>-<domain>, ex: 2020-01-02T10:44:32.427Z-maritime
     // Iterate on cues
     for (let i = 0; i < cues.length; i++) {
         const cue = cues[i];
         // Iterate on each cue's occurences
         for (let j = 0; j < cue.occurences.length; j++) {
             const occurence = cue.occurences[j];
-            const dayNumber = DateTime.fromISO(occurence.computationTime).toFormat(SEISMOGRAPH_DATE_FORMAT);
+            const dayNumber = occurence.computationTime;
             const id = `${dayNumber}-${cue.subdomain}`;
             // Check if there is already one occurence for this specific domain on this specific day
             if (cueOccurencesById[id]) {
