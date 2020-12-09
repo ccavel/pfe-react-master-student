@@ -6,10 +6,7 @@ import Chart from 'chart.js';
 import cueData from 'components/seismograph-page/seismograph.data';
 import { getSubdomains,
     buildSeismographData,
-    orderSeismographDataBySubDomain,
-    // SEISMOGRAPH_DATE_FORMAT
-    // eslint-disable-next-line object-curly-newline
-} from 'utils/multidomain';
+    orderSeismographDataBySubDomain } from 'utils/multidomain';
 
 import './SeismographPage.css';
 
@@ -19,6 +16,20 @@ const { tabCues } = cueData;
 const labelColor = 'white';
 const gridLineColor = 'grey';
 const ticksColor = 'white';
+
+// Opacity of the circles depending of they size
+function colorize(context) {
+    const value = context.dataset.data[context.dataIndex];
+    let a = 1;
+    if (value.r === 15) {
+        a = 0.75;
+    } else if (value.r === 25) {
+        a = 0.5;
+    } else if (value.r === 35) {
+        a = 0.28;
+    }
+    return `rgba(255,0,0,${a})`;
+}
 
 const SeismographPage = () => {
     // REF: reference to the canvas element, where the chart is rendered
@@ -131,7 +142,8 @@ const SeismographPage = () => {
                 datasets: [
                     {
                         label: 'Cues appearance and weighting',
-                        backgroundColor: 'rgba(255, 0, 0, 1)',
+                        backgroundColor: colorize.bind(false),
+                        borderColor: colorize.bind(true),
                         data: orderedData,
                     },
                 ],
