@@ -72,7 +72,20 @@ export const buildSeismographData = (cues) => {
     }));
 };
 
+function verticalCuePadding(value) {
+    let padding = 0.1;
+    if (value.r === 15) {
+        padding = 0.2;
+    } else if (value.r === 25) {
+        padding = 0.5;
+    } else if (value.r === 35) {
+        padding = 0.6;
+    }
+    return padding;
+}
+
 export const orderSeismographDataBySubDomain = (seismographData, subdomains) => seismographData.map((value) => ({
     ...value,
-    y: subdomains.findIndex((domain) => domain.localeCompare(value.subdomain, 'en', { sensitivity: 'base' }) === 0) + 0.5,
+
+    y: subdomains.findIndex((domain) => domain.localeCompare(value.subdomain, 'en', { sensitivity: 'base' }) === 0) + verticalCuePadding(value),
 }));
