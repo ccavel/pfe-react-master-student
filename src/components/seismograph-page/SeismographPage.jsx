@@ -30,7 +30,15 @@ function colorize(context) {
             r = i * 255 / subdomain.length;
         }
     }
-    return `rgba(${r},100,130,1)`;
+    let a = 1;
+    if (value.r === 15) {
+        a = 0.75;
+    } else if (value.r === 25) {
+        a = 0.5;
+    } else if (value.r === 35) {
+        a = 0.25;
+    }
+    return `rgba(${r},100,130,${a})`;
 }
 const SeismographPage = () => {
     // REF: reference to the canvas element, where the chart is rendered
