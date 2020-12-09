@@ -26,6 +26,7 @@
     background-color: var(--blue-inside-graph);
     padding: 10px;
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 .spider-page .container .date-form .legend-red {
@@ -33,6 +34,7 @@
     background-color: var(--red-inside-graph);
     padding: 10px;
     margin-top: 20px;
+    font-size: 16px;
 }
 
 
@@ -63,6 +65,7 @@
 
 .spider-page .date-form input {
     margin-left: 15px;
+    font-size: 16px
 }
 
 .spider-page .chart-container {
