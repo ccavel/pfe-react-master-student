@@ -20,6 +20,31 @@ const labelColor = 'white';
 const gridLineColor = 'grey';
 const ticksColor = 'white';
 
+// Colorization of the circles depending of they size
+function colorize(context) {
+    const value = context.dataset.data[context.dataIndex];
+    let r = 255;
+    let g = 0;
+    let b = 0;
+    // Gestion de l'opacité
+    const a = 0.6;
+    if (value.r === 15) {
+        // a = 0.75;
+        r = 150;
+        b = 100;
+    } else if (value.r === 25) {
+        // a = 0.5;
+        r = 0;
+        g = 150;
+        b = 100;
+    } else if (value.r === 35) {
+        // a = 0.28;
+        r = 0;
+        g = 150;
+        b = 200;
+    }
+    return `rgba(${r},${g},${b},${a})`;
+}
 const SeismographPage = () => {
     // REF: reference to the canvas element, where the chart is rendered
     const canvasRef = useRef();
@@ -131,7 +156,9 @@ const SeismographPage = () => {
                 datasets: [
                     {
                         label: 'Cues appearance and weighting',
-                        backgroundColor: 'rgba(255, 0, 0, 1)',
+                        backgroundColor: colorize.bind(false),
+                        borderColor: colorize.bind(true),
+
                         data: orderedData,
                     },
                 ],
