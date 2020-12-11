@@ -1072,6 +1072,487 @@
         "warningCriteriaNightRed": "COM",
         "weighting": 35,
         "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
+      },
+      {
+        "action": [
+          {
+            "id": "29",
+            "startDate": "2020-01-03T21:16:43.727Z"
+          }
+        ],
+        "description": "desc29",
+        "iconType": "string",
+        "id": "string",
+        "isRepettitive": true,
+        "isSuperCue": true,
+        "triggerIds": [
+          "29"
+        ],
+        "name": "cue n°29",
+        "number": 0,
+        "occurences": [
+          {
+            "minedDocumentId": "string",
+            "miningState": true,
+            "sourceQuality": 0,
+            "computationTime": "2020-01-03T21:16:43.727Z",
+            "lat": 0,
+            "lon": 0,
+            "cueEventId": "string"
+          }
+        ],
+        "lat": 0,
+        "lon": 0,
+        "icon": "string",
+        "subdomain": "Agriculteur",
+        "warningCriteriaDayRed": "COM",
+        "warningCriteriaNightRed": "COM",
+        "weighting": 35,
+        "emergenceOriginId": "string"
       }
     ]
   }

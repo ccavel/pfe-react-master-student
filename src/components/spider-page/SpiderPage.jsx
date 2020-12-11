@@ -83,8 +83,8 @@ const SpiderPage = () => {
                     },
                     ticks: {
                         beginAtZero: true,
+                        stepSize: max > 5 ? Math.floor(max / 5) : 1,
                         max: max > MIN_SCALE_SIZE ? max : MIN_SCALE_SIZE,
-                        stepSize: 1,
                     },
                     pointLabels: {
                         fontSize: GRAPH_FONT_SIZE,
