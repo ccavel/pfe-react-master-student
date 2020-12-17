@@ -771,11 +771,7 @@
       "lat": 0,
       "lon": 0,
       "icon": "string",
-<<<<<<< Updated upstream
-      "subdomain": "Sans Activité Professionnelle",
-=======
       "subdomain": "Amérique du Sud",
->>>>>>> Stashed changes
       "warningCriteriaDayRed": "COM",
       "warningCriteriaNightRed": "COM",
       "weighting": 5,
@@ -886,11 +882,7 @@
       "lat": 0,
       "lon": 0,
       "icon": "string",
-<<<<<<< Updated upstream
-      "subdomain": "Étudiants",
-=======
       "subdomain": "Amérique du Sud",
->>>>>>> Stashed changes
       "warningCriteriaDayRed": "COM",
       "warningCriteriaNightRed": "COM",
       "weighting": 15,

@@ -35,7 +35,7 @@ const SeismographPage = () => {
             duration: 0,
         },
         legend: {
-            display: true,
+            display: false,
             position: 'bottom',
             labels: {
                 fontColor: labelColor,
@@ -67,7 +67,7 @@ const SeismographPage = () => {
                 {
                     type: 'time',
                     time: {
-                        unit: 'hour',
+                        unit: 'hour', // changer le type en fonction du nombre de jour affiché (3-4j --> hour ; 5-20j --> day ; 20j-12mois --> month;sinon year)
                         displayFormats: {
                             minute: 'h:mm a',
                             hour: 'h:mm a',
