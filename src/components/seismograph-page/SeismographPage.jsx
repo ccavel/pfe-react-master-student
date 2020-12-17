@@ -24,24 +24,23 @@ const ticksColor = 'white';
 function colorize(context) {
     const value = context.dataset.data[context.dataIndex];
     let r = 255;
-    let g = 0;
+    let g = 235;
     let b = 0;
     // Gestion de l'opacité
     const a = 0.6;
     if (value.r === 15) {
         // a = 0.75;
-        r = 150;
-        b = 100;
+        r = 255;
+        g = 116;
     } else if (value.r === 25) {
         // a = 0.5;
-        r = 0;
-        g = 150;
-        b = 100;
+        r = 255;
+        g = 0;
     } else if (value.r === 35) {
         // a = 0.28;
-        r = 0;
-        g = 150;
-        b = 200;
+        r = 255;
+        g = 0;
+        b = 139;
     }
     return `rgba(${r},${g},${b},${a})`;
 }
