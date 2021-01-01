@@ -16,7 +16,7 @@ import './SeismographPage.css';
 const { tabCues } = cueData;
 
 // Colors in the graph
-const labelColor = 'white';
+// const labelColor = 'white';
 const gridLineColor = 'grey';
 const ticksColor = 'white';
 
@@ -45,6 +45,25 @@ function colorize(context) {
     // value.r = 15;
     return `rgba(${r},${g},${b},${a})`;
 }
+// Select bubble data
+function bubbleData(value) {
+    const tab = { x: 0, y: 0, r: 0 };
+    for (let i = 0; i < value.length; i++) {
+        tab.x = value[i].x;
+        tab.y = value[i].y;
+        tab.r = value[i].r;
+    }
+    return tab;
+}
+// Select line data
+function lineData(value) {
+    const tab = { x: 0, y: 0 };
+    for (let i = 0; i < value.length; i++) {
+        tab.x = value[i].x;
+        tab.y = value[i].y;
+    }
+    return tab;
+}
 
 const SeismographPage = () => {
     // REF: reference to the canvas element, where the chart is rendered
@@ -53,65 +72,6 @@ const SeismographPage = () => {
     // STATE
     const [subdomains, setSubDomains] = useState(getSubdomains(tabCues));
     const [subdomainHeight, setSubdomainHeight] = useState(0);
-
-    // OPTION GRAPHIC STYLE
-    const graphOptions = {
-        events: [''],
-        animation: {
-            duration: 0,
-        },
-        legend: {
-            display: true,
-            position: 'bottom',
-            labels: {
-                fontColor: labelColor,
-            },
-        },
-        layout: {
-            padding: {
-                left: 50,
-                right: 50,
-                top: 0,
-                bottom: 0,
-            },
-        },
-        scales: {
-            yAxes: [
-                {
-                    gridLines: {
-                        color: gridLineColor,
-                    },
-                    ticks: {
-                        min: 0,
-                        max: subdomains.length,
-                        stepSize: 1,
-                        callback: () => '',
-                    },
-                },
-            ],
-            xAxes: [
-                {
-                    type: 'time',
-                    time: {
-                        unit: 'hour',
-                        displayFormats: {
-                            minute: 'h:mm a',
-                            hour: 'h:mm a',
-                            day: 'D/M/YYYY',
-                            month: 'D MM',
-                        },
-                    },
-                    gridLines: {
-                        color: gridLineColor,
-                    },
-                    ticks: {
-                        fontColor: ticksColor,
-                        stepSize: 1,
-                    },
-                },
-            ],
-        },
-    };
 
     // HANDLERS
     /* Source element */
@@ -150,24 +110,233 @@ const SeismographPage = () => {
     useEffect(() => {
         const seismographData = buildSeismographData(tabCues);
         const orderedData = orderSeismographDataBySubDomain(seismographData, subdomains);
-        // eslint-disable-next-line no-new
-        const chart = new Chart(canvasRef.current, {
-            type: 'bubble',
-            data: {
-                datasets: [
-                    {
-                        label: 'Cues appearance and weighting',
-                        backgroundColor: colorize.bind(false),
-                        borderColor: colorize.bind(true),
 
-                        data: orderedData,
-                    },
+        // Là ça bloque -->
+        const tab = bubbleData(orderedData);
+        const tab2 = lineData(orderedData);
+
+        const mixedChart = new Chart(canvasRef.current, { type: 'bubble',
+            data: {
+                datasets: [{
+                    label: 'Bubble Dataset',
+                    backgroundColor: colorize.bind(false),
+                    borderColor: colorize.bind(true),
+                    // data: tab,
+                    data: [{
+                        x: 1.05,
+                        y: 3.5,
+                        r: 15,
+                    }, {
+                        x: 1.26,
+                        y: 2.5,
+                        r: 5,
+                    }, {
+                        x: 1.30,
+                        y: 6.5,
+                        r: 5,
+                    }, {
+                        x: 1.37,
+                        y: 5.5,
+                        r: 35,
+                    }, {
+                        x: 1.41,
+                        y: 1.5,
+                        r: 15,
+                    }, {
+                        x: 1.49,
+                        y: 4.5,
+                        r: 5,
+                    }, {
+                        x: 1.69,
+                        y: 1.5,
+                        r: 25,
+                    }, {
+                        x: 1.88,
+                        y: 0.5,
+                        r: 35,
+                    }, {
+                        x: 2.01,
+                        y: 4.5,
+                        r: 35,
+                    }, {
+                        x: 2.07,
+                        y: 5.5,
+                        r: 35,
+                    }, {
+                        x: 2.1,
+                        y: 0.5,
+                        r: 5,
+                    }, {
+                        x: 2.2,
+                        y: 5.5,
+                        r: 5,
+                    }, {
+                        x: 2.54,
+                        y: 5.5,
+                        r: 15,
+                    }, {
+                        x: 2.60,
+                        y: 2.5,
+                        r: 15,
+                    }, {
+                        x: 2.68,
+                        y: 3.5,
+                        r: 25,
+                    }, {
+                        x: 2.74,
+                        y: 4.5,
+                        r: 35,
+                    }, {
+                        x: 2.81,
+                        y: 5.5,
+                        r: 35,
+                    }, {
+                        x: 2.89,
+                        y: 6.5,
+                        r: 35,
+                    }, {
+                        x: 2.90,
+                        y: 6.5,
+                        r: 35,
+                    }, {
+                        x: 2.96,
+                        y: 0.5,
+                        r: 5,
+                    }, {
+                        x: 3.02,
+                        y: 2.5,
+                        r: 5,
+                    }, {
+                        x: 3.13,
+                        y: 0.5,
+                        r: 5,
+                    }, {
+                        x: 3.25,
+                        y: 6.5,
+                        r: 15,
+                    }, {
+                        x: 3.46,
+                        y: 5.5,
+                        r: 15,
+                    }, {
+                        x: 3.55,
+                        y: 0.5,
+                        r: 25,
+                    }, {
+                        x: 3.69,
+                        y: 3.5,
+                        r: 35,
+                    }, {
+                        x: 3.77,
+                        y: 6.5,
+                        r: 35,
+                    }, {
+                        x: 3.91,
+                        y: 4.5,
+                        r: 35,
+                    }],
+                    type: 'bubble',
+                    borderWidth: 2,
+                }, {
+                    type: 'line',
+                    label: 'Line Dataset',
+                    data: [{
+                        x: 1.05,
+                        y: 3.5,
+                    }, {
+                        x: 1.26,
+                        y: 2.5,
+                    }, {
+                        x: 1.30,
+                        y: 6.5,
+                    }, {
+                        x: 1.37,
+                        y: 5.5,
+                    }, {
+                        x: 1.41,
+                        y: 1.5,
+                    }, {
+                        x: 1.49,
+                        y: 4.5,
+                    }, {
+                        x: 1.69,
+                        y: 1.5,
+                    }, {
+                        x: 1.88,
+                        y: 0.5,
+                    }, {
+                        x: 2.01,
+                        y: 4.5,
+                    }, {
+                        x: 2.07,
+                        y: 5.5,
+                    }, {
+                        x: 2.1,
+                        y: 0.5,
+                    }, {
+                        x: 2.2,
+                        y: 5.5,
+                    }, {
+                        x: 2.54,
+                        y: 5.5,
+                    }, {
+                        x: 2.60,
+                        y: 2.5,
+                    }, {
+                        x: 2.68,
+                        y: 3.5,
+                    }, {
+                        x: 2.74,
+                        y: 4.5,
+                    }, {
+                        x: 2.81,
+                        y: 5.5,
+                    }, {
+                        x: 2.89,
+                        y: 6.5,
+                    }, {
+                        x: 2.90,
+                        y: 6.5,
+                    }, {
+                        x: 2.96,
+                        y: 0.5,
+                    }, {
+                        x: 3.02,
+                        y: 2.5,
+                    }, {
+                        x: 3.13,
+                        y: 0.5,
+                    }, {
+                        x: 3.25,
+                        y: 6.5,
+                    }, {
+                        x: 3.46,
+                        y: 5.5,
+                    }, {
+                        x: 3.55,
+                        y: 0.5,
+                    }, {
+                        x: 3.69,
+                        y: 3.5,
+                    }, {
+                        x: 3.77,
+                        y: 6.5,
+                    }, {
+                        x: 3.91,
+                        y: 4.5,
+                    }],
+                    // data: tab2,
+                    fill: false,
+                    borderWidth: 1,
+                    showLine: true,
+                    borderColor: 'rgba(250,0,0,1)',
+                    lineTension: 0,
+                },
                 ],
-            },
-            options: graphOptions,
-        });
-        setSubdomainHeight(chart.scales['y-axis-0'].getPixelForTick(1) - chart.scales['y-axis-0'].getPixelForTick(0));
-    }, [graphOptions, subdomains]);
+            } });
+
+        setSubdomainHeight(mixedChart.scales['y-axis-0'].getPixelForTick(1) - mixedChart.scales['y-axis-0'].getPixelForTick(0));
+    }, [subdomains]);
 
     return (
         <div className="seismograph-page">

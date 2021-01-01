@@ -49,7 +49,10 @@ export const buildSeismographData = (cues) => {
         // Iterate on each cue's occurences
         for (let j = 0; j < cue.occurences.length; j++) {
             const occurence = cue.occurences[j];
-            const dayNumber = occurence.computationTime;
+            const decimal = occurence.computationTime.slice(11, 13) * 0.01;
+            const unit = occurence.computationTime.slice(8, 10) * 1;
+            const dayNumber = unit + decimal; // dayNumber = DAY,H (ex: 1,12 correspond à 01 à 12h)
+
             const id = `${dayNumber}-${cue.subdomain}`;
             // Check if there is already one occurence for this specific domain on this specific day
             if (cueOccurencesById[id]) {
@@ -59,7 +62,6 @@ export const buildSeismographData = (cues) => {
                     dayNumber,
                     subdomain: cue.subdomain,
                     weighting: cue.weighting,
-                    nbOccurences: 1,
                 };
             }
         }
