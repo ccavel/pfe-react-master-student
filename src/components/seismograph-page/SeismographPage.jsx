@@ -10,6 +10,7 @@ import { getSubdomains,
     // SEISMOGRAPH_DATE_FORMAT
     // eslint-disable-next-line object-curly-newline
 } from 'utils/multidomain';
+import legend from 'assets/Legende.png';
 
 import './SeismographPage.css';
 
@@ -61,7 +62,7 @@ const SeismographPage = () => {
             duration: 0,
         },
         legend: {
-            display: true,
+            display: false,
             position: 'bottom',
             labels: {
                 fontColor: labelColor,
@@ -96,7 +97,7 @@ const SeismographPage = () => {
                         unit: 'hour',
                         displayFormats: {
                             minute: 'h:mm a',
-                            hour: 'h:mm a',
+                            hour: 'D/MM - h:mm a',
                             day: 'D/M/YYYY',
                             month: 'D MM',
                         },
@@ -199,6 +200,10 @@ const SeismographPage = () => {
                     <canvas ref={canvasRef} />
                 </div>
             </div>
+            <img
+                    src={legend}
+                    alt="Légende"
+            />
         </div>
     );
 };
