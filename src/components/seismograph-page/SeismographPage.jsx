@@ -38,12 +38,14 @@ function colorize(context) {
         g = 0;
     } else if (value.r === 35) {
         // a = 0.28;
-        r = 255;
-        g = 0;
-        b = 139;
+        r = 150;
+        g = 30;
+        b = 30;
     }
+    // value.r = 15;
     return `rgba(${r},${g},${b},${a})`;
 }
+
 const SeismographPage = () => {
     // REF: reference to the canvas element, where the chart is rendered
     const canvasRef = useRef();
