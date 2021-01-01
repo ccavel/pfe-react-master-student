@@ -70,7 +70,7 @@ const SeismographPage = () => {
                         unit: 'hour', // changer le type en fonction du nombre de jour affiché (3-4j --> hour ; 5-20j --> day ; 20j-12mois --> month;sinon year)
                         displayFormats: {
                             minute: 'h:mm a',
-                            hour: 'h:mm a',
+                            hour: 'D/MM h:mm a',
                             day: 'D/M/YYYY',
                             month: 'D MM',
                         },
