@@ -199,11 +199,13 @@ const SeismographPage = () => {
                 <div className="chart-container">
                     <canvas ref={canvasRef} />
                 </div>
-            </div>
-            <img
+                <img
                     src={legend}
                     alt="Légende"
-            />
+                    width="350"
+                    height="100"
+                />
+            </div>
         </div>
     );
 };
