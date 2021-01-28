@@ -10,9 +10,9 @@ import { getSubdomains,
     // SEISMOGRAPH_DATE_FORMAT
     // eslint-disable-next-line object-curly-newline
 } from 'utils/multidomain';
+import legend from 'assets/Legende2.png';
 
 import './SeismographPage.css';
-import legend from 'assets/Legende.png'
 
 const { tabCues } = cueData;
 
@@ -174,7 +174,7 @@ const SeismographPage = () => {
                 <img
                     src={legend}
                     alt="Légende"
-                    width="350"
+                    width="300"
                     height="100"
                 />
             </div>
