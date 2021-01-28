@@ -12,6 +12,7 @@ import { getSubdomains,
 } from 'utils/multidomain';
 
 import './SeismographPage.css';
+import legend from 'assets/Legende.png'
 
 const { tabCues } = cueData;
 
@@ -170,6 +171,12 @@ const SeismographPage = () => {
                 <div className="chart-container">
                     <canvas ref={canvasRef} />
                 </div>
+                <img
+                    src={legend}
+                    alt="Légende"
+                    width="350"
+                    height="100"
+                />
             </div>
         </div>
     );
